@@ -1,0 +1,9 @@
+work that done today
+-->Material videos 8 sections
+-->done all Practical and challenges in practice folder
+           ->practical 1 give some problems (done by 2 methods using float and display table another was new for me using flex )
+           ->practical 2 was too easy
+           ->practical 3 started as easy one but third avg score makes me type 12 if condition.
+--> Study lectures ppt from mam
+--> done different 4 types of table pattern problem given by mam 
+				
