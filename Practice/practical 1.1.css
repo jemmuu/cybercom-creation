@@ -1,0 +1,70 @@
+body
+{
+	border: 1px solid;
+}
+h2
+{
+	text-align: center;
+
+}
+.cyber
+{
+    height:150px;
+	 position:relative;
+  
+  left: 42.4%;
+   
+}
+.row
+{
+ padding: 0 150px; 
+}
+
+.row:after
+{
+ content: "";
+ display: table;
+ clear: both; 
+}
+.col
+{
+	float: left;
+	
+	padding: 0px 15px;
+	text-align: center;
+	
+	
+}
+.card
+{
+	
+	padding: 2px;
+	box-shadow: 0 4px 8px 0;
+	
+}
+
+
+.imq
+{
+	background-color: lightgrey;
+	padding:0 5px;
+	margin: 0 0;
+		
+}
+.para
+{    padding: 0 175px; 
+	text-align: center;
+}
+
+
+
+
+
+
+
+img{background-color: #181818;
+    color: white;
+    text-align: center;
+    }
+
+
