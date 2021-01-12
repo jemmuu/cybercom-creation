@@ -1,0 +1,10 @@
+work that done today
+-->Material videos 12 sections
+-->done all Practical in tutorial
+           ->practical 1 hoisting
+           ->practical 2 object , object properties and methods
+           ->practical 3 loops with break / continue
+--> Study lectures ppt from mam
+--> Continue study basics of bootstrap 4 from w3school
+--> study idp defination
+			
