@@ -1,0 +1,9 @@
+work that done today
+-->Material videos 6 sections
+-->done all Practical in practice folder
+           ->practical 1 function and array challenge
+           ->practical 2 object and this keyword challenge
+           
+--> Continue study basics of bootstrap 4 from w3school
+--> study mam's challenge
+			
