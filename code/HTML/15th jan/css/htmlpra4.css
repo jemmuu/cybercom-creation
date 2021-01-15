@@ -1,0 +1,67 @@
+body
+{
+	border: 1px solid;
+}
+
+.cyber
+{
+    height:150px;
+	 position:relative;
+  
+  left: 42.4%;
+   
+}
+
+.hh
+{
+	text-align:  center;
+}
+
+
+.po
+{
+	margin: 50px  30%;
+	font-size: 50px;
+	font-weight: bold;
+
+}
+.tbl
+{
+	height: 700px ;
+	width: 600px;
+	
+	margin: 0  30%;
+	border:1px solid black;
+
+
+}
+
+#imag
+{
+	width: 100px;
+	height: 150px;
+	align-items: center; 	
+	
+}
+
+
+
+div > img
+{
+	height: 100%;
+	width:100%;
+}
+
+
+
+
+ td , tr , th
+{
+	
+	align-items: center;
+
+	border:1px solid black;
+
+
+}
+
