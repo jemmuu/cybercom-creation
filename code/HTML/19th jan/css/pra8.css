@@ -1,0 +1,136 @@
+.extra-info {
+  display: none;
+  position: relative;
+  z-index: 3;
+	
+  
+}
+h3
+{
+	padding-left: 10px;
+}
+
+
+
+.container
+{
+ 	border:2px solid black;
+ 	width:40%;
+ 	margin-left: auto;
+ 	margin-right: auto;
+ 	background-color: #dfe4ea;
+}
+table
+{
+	margin-right: auto;
+	margin-left: auto;
+	width:100%;
+	
+}
+
+.tc1
+{
+	text-align: right;
+	padding-right: 2%;
+	width:30%;
+}
+
+input
+{
+	width:90%;
+}
+
+.s1
+{
+	width:85%;
+}
+
+#zip
+{
+	width: 30%;
+}
+#zip1
+{
+	width: 30%;
+}
+
+#ph
+{
+	width: auto;
+}
+
+
+#sec_question
+{
+	max-width: 90%;
+}
+td
+{
+	padding: 6px 0px;
+}
+
+#state
+{
+	width:90%;
+}
+
+#em
+{
+	padding-top: 0px;
+}
+
+#sub
+{
+	
+	margin-right: auto;
+	margin-left: auto;
+}
+
+
+.submit
+{
+	
+	border-radius: 45px;
+	text-align: center;
+	height: 30px;
+	width:45%;
+	background-color: #9b59b6;
+	color: white;
+	font-weight: bold;
+	font-size: 110%;
+	border:none;
+	box-shadow:5px 5px 30px #9b59b6; 
+	
+	 
+
+}
+
+.reset
+{
+	
+	border-radius: 45px;
+	text-align: center;
+	height: 30px;
+	width:50%;
+	background-color: #9b59b6;
+	color: white;
+	font-weight: bold;
+	font-size: 110%;
+	border:none;
+	box-shadow:5px 5px 30px #9b59b6; 
+	
+	 
+
+}
+
+.t4
+{
+	padding-top: 6%;
+	padding-left: 25%;
+	/*width:auto;
+ 	margin-left:    20%;
+ 	margin-right: 20%;*/
+
+ 	align-items: center;
+
+}
