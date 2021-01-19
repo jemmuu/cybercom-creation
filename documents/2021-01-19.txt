@@ -1,0 +1,8 @@
+summary of the day
+-->Material videos 2 videos
+-->done all Practical in practice folder
+           ->html prac 8 - it looked easy but when i started it look like a difficult task from icons to setting tags to perfect position
+				i used php for sendng value to info page because it was optimum result diffrent cookies or localstorage may take 
+				storage. 
+	   
+-->try to do programs mam provided and done 2 of them that takes time bcause i use json which was new for me.
