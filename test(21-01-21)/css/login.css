@@ -1,0 +1,51 @@
+h2
+{text-align: center; 
+	}
+
+.mainCon
+{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;;
+	height: 45%;
+	width:35%;
+	margin: auto;
+	background-color :#fed8b1;
+}
+
+
+.OR
+{
+	text-align: center;
+}
+
+form
+{
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+
+}
+input
+{
+		height: 30%;
+		width: 80%;
+		margin: auto;
+}
+
+#login
+{
+	background-color: orange;
+	border:none;
+	height: 120%;
+}
+
+#register_btn
+{
+	background-color: orange;
+	border:none;
+	height: 120%;
+}

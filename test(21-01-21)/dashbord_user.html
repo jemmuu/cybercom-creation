@@ -3,8 +3,41 @@
 <head>
 	<title>Dashboard User</title>
 </head>
-<body>
+<body><!-- 	side navigation bar-->
+<div class="sidenav">
+	
+		<div class="unameCon" id="unameCon">
+			
+			Hello  <label id="uname"> [uname]</label>
+		</div>
+
+		<button>
+			Dashboard
+		</button>
+		<button id="userBtn" onclick="navUsers()">
+			Users
+		</button>
+		<button id="sessionBtn"  onclick="navSession()">
+			Login<br>
+			Sessions
+		</button  id="logoutBtn"  onclick="logout()">
+		<button>
+			Logout
+		</button>
+
+
+</div>
+
+<!-- side navigation bar end-->
+
+<!-- main content -->
 		Welcomr to cybercom creation 
-<script type="text/javascript" src="dashbord_user.js"></script>
+
+		<lable id='baday'></lable>
+
+
+
+<!-- mian content end -->
+<script type="text/javascript" src="js/dashbord_user.js"></script>
 </body>
 </html>

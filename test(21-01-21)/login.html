@@ -2,18 +2,23 @@
 <html>
 <head>
 	<title>Login Page</title>
+      <link rel="stylesheet" type="text/css" href="css/login.css">
 </head>
 <body>
+
+      <h2>Login</h2>
        <!-- Form start here -->
+       <div class="mainCon">
        <form class="loginForm" id="loginForm">
        	<input type="email" name="email" id="email" placeholder="Email"></br>
        	<input type="password" name="password" id="password" placeholder="Password"></br>
-       	<label>OR</label> <br>
+       	
        	<input type="button" name="login" id="login" value="LOGIN" onclick="loginCheck()"></br>
+            <label class="OR">OR</label> <br>
        	<input type="button" name="register_btn" id="register_btn" value="REGISTER NOW" onclick="navFun()">
        </form>
       <!--  form end here -->
-
+</div>
  <script type="text/javascript" src="js/login.js"></script>
 </body>
 </html>
