@@ -1,0 +1,29 @@
+</!DOCTYPE html>
+<html>
+<head>
+	<title>Registration Page</title>
+</head>
+<body onload="chkAdmin()">
+	<!-- Form start here -->
+       <form class="reg_form" id="reg_form">
+		       	<input type="text" name="name" id="name" placeholder="name" required></br>
+		       	<input type="email" name="email" id="email" placeholder="Email" required></br>
+		       	<input type="password" name="password" id="password" placeholder="Password" required></br>
+		       	<input type="password" name="con_password" id="con_password" placeholder="Confirm Password" required><br>
+			       	<select name="city" id="city" required>
+			       		<option disabled selected value >Select City</option>
+			       		<option value="surat">Surat</option>
+			       		<option value="ahemdabad">Ahemdabad</option>
+			       	</select><br>
+		     	  	<select name="state" id="state" required>
+			       		<option disabled selected value >Select Sate</option>
+			       		<option value="gujrat">Gujrat</option>			       		
+			       	</select><br>
+			       	<input type="checkbox" id="term&con" name="term&con" value="term&con">
+  							<label for="term&con"> Terms & Conditions</label><br>
+		       	<input type="button" name="register_btn" id="register_btn" value="REGISTER" onclick="adminReg()">
+       </form>
+      <!--  form end here -->
+  <script type="text/javascript" src="js/Registeration.js"></script>
+</body>
+</html>
