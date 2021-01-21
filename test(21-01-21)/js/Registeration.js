@@ -1,5 +1,5 @@
 
-function chkAdmin(argument) {
+function chkAdmin() {
 	// body...
 
 	
