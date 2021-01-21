@@ -18,9 +18,10 @@ function loginCheck() {
 	let email = document.getElementById('email').value;
 	let password = document.getElementById('password').value;
 	let adminData = JSON.parse(localStorage.getItem('adminData'));
-	let adminPass=adminData[password];
-	let adminEmail=adminData[email];
-	console.log(adminPass);
+	let adminPass=adminData.password;
+	let adminEmail=adminData.email;
+	// console.log(adminPass);
+	// console.log(adminEmail);
 
 	if (email == adminEmail && password == adminPass) {
 

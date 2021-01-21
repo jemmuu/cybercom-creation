@@ -31,5 +31,5 @@ localStorage.setItem('adminData', JSON.stringify(adminData));
 
 
 
-//window.location.href='login.html';
+window.location.href='login.html';
 }

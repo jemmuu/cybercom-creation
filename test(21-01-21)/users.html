@@ -1,0 +1,80 @@
+</!DOCTYPE html>
+<html>
+<head>
+	<title>Users</title>
+</head>
+<body>
+
+<!-- 	side navigation bar-->
+<div class="sidenav">
+	
+		<div class="unameCon" id="unameCon">
+			
+			Hello  <label id="uname"> [uname]</label>
+		</div>
+
+		<button>
+			Dashboard
+		</button>
+		<button id="userBtn" onclick="navUsers()">
+			Users
+		</button>
+		<button>
+			Login<br>
+			Sessions
+		</button>
+		<button>
+			Logout
+		</button>
+
+
+</div>
+
+<!-- side navigation bar end-->
+
+
+<!-- main content start here -->
+
+		<div class="formContainer" id="formCon">
+		   <form>
+				<input type="text" name="name" id="name" placeholder="name" >&nbsp
+		       	<input type="email" name="email" id="email" placeholder="Email" >&nbsp
+		       	<input type="password" name="password" id="password" placeholder="Password" >&nbsp
+		       	<input type="date" name="dob" id="dob" placeholder="Birthdate" >
+		       	<input type="button" name="addUser" id="addUser" value="Add User" onclick="addUsers()">
+
+
+		  </form>
+
+	   </div>
+	   <div class="userRecord" id="userRec">
+
+
+	   	<table>
+				<thead id="tableHead">
+					<th>
+						<td>Name</td>
+						<td>Email</td>
+						<td>Password</td>
+						<td>Birthdate</td>
+						<td>Age</td>
+						<td>Action</td>
+					</th>
+
+				</thead>
+				<tbody  id='tableData'>
+					
+					<tr>
+
+					</tr>
+
+				</tbody>
+
+
+
+		</table>
+
+	   </div>
+<script type="text/javascript" src="js/users.js"></script>
+</body>
+</html>

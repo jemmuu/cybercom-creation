@@ -2,8 +2,67 @@
 <html>
 <head>
 	<title>Dashbord</title>
+	<link rel="stylesheet" type="text/css" href="css/dashbord_admin.css">
 </head>
 <body>
-test linking
+
+
+<!-- 	side navigation bar-->
+<div class="sidenav">
+	
+		<div class="unameCon" id="unameCon">
+			
+			Hello  <label id="uname"> [uname]</label>
+		</div>
+
+		<button>
+			Dashboard
+		</button>
+		<button id="userBtn" onclick="navUsers()">
+			Users
+		</button>
+		<button>
+			Login<br>
+			Sessions
+		</button>
+		<button>
+			Logout
+		</button>
+
+
+</div>
+
+<!-- side navigation bar end-->
+
+
+<!-- main body dashbord page start here-->
+<div class="mainContent" >
+   Dashboard
+			<div>
+					User under 18<br>
+					<label id="under18">x</label>Users
+			</div>
+			<div>
+					User between  18 to 50<br>
+					<label id="between18to50">x</label>Users
+			</div>
+			<div>
+					User greater than 50<br>
+					<label id="above50">x</label>Users
+			</div>
+
+
+			<div id="bdaycon">
+
+				<lable id="bdayLabel"> abc user bday</lable>
+			</div>
+
+</div>
+
+
+<!-- main body end here -->
+
+
+<script type="text/javascript" src="js/dashbord_admin.js"></script>
 </body>
 </html>
