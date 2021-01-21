@@ -9,7 +9,7 @@ function navSession() {
 function logout() {
 
 			sessionStorage.clear();
-			window.location.href= 'login.html'
+			window.location.href= 'login.html';
 	
 
 
