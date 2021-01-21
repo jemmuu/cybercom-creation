@@ -7,6 +7,21 @@ var user  = JSON.parse(sessionStorage.getItem('uname'));
 
 var logIntime = new Date().toLocaleString();
 var userName= user['name'];
+console.log(userName);
+var bdate=user['dob'];
+var temp_date = new Date(bdate);
+var bmonth = temp_date.getMonth() +1;
+var bday = temp_date.getDate();
+
+var currdate=new Date();
+var currMonth = currdate.getMonth() +1;
+var curday = currdate.getDate();
+
+if (bmonth == currMonth && curday==bday) {
+
+
+	document.getElementById('baday').innerHTML= `Happy Birthday ${userName}`;
+}
 
 
 var userDetails= function(name,logintime,logouttime){
@@ -21,10 +36,8 @@ var userDetails= function(name,logintime,logouttime){
 
 var loginDetails= [];
 
-
-function logout() {
-
-			let logouttime = new Date().toLocaleString();
+document.getElementById("logout").addEventListener("click", function(){
+  let logouttime = new Date().toLocaleString();
 
 			let newDetails = new userDetails(userName,logIntime,logouttime);
 
@@ -34,8 +47,7 @@ function logout() {
 
 			console.log(logouttime);
 			console.log('here');
-	
+});
 
 
-}
  

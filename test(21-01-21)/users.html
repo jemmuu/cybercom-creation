@@ -2,6 +2,8 @@
 <html>
 <head>
 	<title>Users</title>
+	<link rel="stylesheet" type="text/css" href="css/nav.css">
+	<link rel="stylesheet" type="text/css" href="css/users.css">
 
 </head>
 <body>
@@ -11,7 +13,7 @@
 	
 		<div class="unameCon" id="unameCon">
 			
-			Hello  <label id="uname"> [uname]</label>
+			<h4>Hello  <label id="uname"> [uname]</label></h4>
 		</div>
 
 		<button>
@@ -20,7 +22,7 @@
 		<button id="userBtn" onclick="navUsers()">
 			Users
 		</button>
-		<button>
+		<button id="sessionBtn"  onclick="navSession()">
 			Login<br>
 			Sessions
 		</button>
@@ -38,11 +40,29 @@
 
 		<div class="formContainer" id="formCon">
 		   <form>
-				<input type="text" name="name" id="name" placeholder="name" >&nbsp
-		       	<input type="email" name="email" id="email" placeholder="Email" >&nbsp
-		       	<input type="password" name="password" id="password" placeholder="Password" >&nbsp
-		       	<input type="date" name="dob" id="dob" placeholder="Birthdate" >&nbsp
-		       	<input type="button" name="addUser" id="addUser" value="Add User" onclick="addUsers()">
+		   		<table>
+		   			<tr>
+		   				<td><input type="text" name="name" id="name" placeholder="name" ></td>
+		   			
+		   				<td><input type="email" name="email" id="email" placeholder="Email" ></td>
+		   			
+		   				<td><input type="password" name="password" id="password" placeholder="Password" ></td>
+		   			
+		   				<td><input type="date" name="dob" id="dob" placeholder="Birthdate" >
+		       	        </td>
+		   			</tr>
+
+		   		
+		   			<tr>
+		   				
+		   				<td colspan="4" class="addUserBtn">
+		       	        <input type="button" name="addUser" id="addUser" value="Add User" onclick="addUsers()"></td>
+		   			</tr>
+		   		</table>
+				
+		       	
+		       	
+		       	
 
 
 		  </form>
@@ -78,6 +98,6 @@
 	   </div>
 	   <!-- main content end here -->
 <script type="text/javascript" src="js/users.js"></script>
-
+<script type="text/javascript" src="js/nav.js"></script>
 </body>
 </html>

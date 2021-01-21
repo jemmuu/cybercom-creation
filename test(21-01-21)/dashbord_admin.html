@@ -3,6 +3,8 @@
 <head>
 	<title>Dashbord</title>
 	<link rel="stylesheet" type="text/css" href="css/dashbord_admin.css">
+		<link rel="stylesheet" type="text/css" href="css/nav.css">
+
 </head>
 <body>
 
@@ -12,7 +14,7 @@
 	
 		<div class="unameCon" id="unameCon">
 			
-			Hello  <label id="uname"> [uname]</label>
+			<h4>Hello  <label id="uname"> [uname]</label></h4>
 		</div>
 
 		<button>
@@ -36,25 +38,41 @@
 
 
 <!-- main body dashbord page start here-->
+<h2>Dashboard</h2><br>
+
 <div class="mainContent" >
-   Dashboard
-			<div>
+  
+			<div class="row">
 					User under 18<br>
 					<label id="under18">x</label>Users
-			</div>
-			<div>
+			</div >
+			<div class="row">
 					User between  18 to 50<br>
 					<label id="between18to50">x</label>Users
 			</div>
-			<div>
+			<div class="row">
 					User greater than 50<br>
 					<label id="above50">x</label>Users
-			</div>
+			</div >
 
+</div>
 
+<div class="birthday">
 			<div id="bdaycon">
 
-				<lable id="bdayLabel"> abc user bday</lable>
+				<table>
+				
+				<tbody  id='tableData'>
+					
+					<tr>
+						<td>birth day notification</td>
+					</tr>
+
+				</tbody>
+
+
+
+		</table>
 			</div>
 
 </div>
@@ -64,5 +82,6 @@
 
 
 <script type="text/javascript" src="js/dashbord_admin.js"></script>
+<script type="text/javascript" src="js/nav.js"></script>
 </body>
 </html>

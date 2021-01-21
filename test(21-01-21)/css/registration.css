@@ -1,0 +1,50 @@
+.container{
+	display: flex;
+	flex-direction: column;
+	width: 30%;
+	position: absolute;
+	height: auto;
+	top: 10%;
+	left: 35%;
+	border: 1px solid black;
+	justify-content: center;
+	align-items: center;
+	/*background-color :#fed8b1*/
+}
+
+form
+{
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+}
+
+input
+{
+		height: 30%;
+		width: 80%;
+		margin: auto;
+}
+
+select
+{
+	    height: 30%;
+		width: 80%;
+		margin: auto;
+}
+
+#termNcon
+{
+	height: auto;
+		width: auto;
+		text-align: left;
+}
+
+#register_btn
+{
+	background-color: orange;
+	border:none;
+	height: 120%;
+}

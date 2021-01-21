@@ -1,0 +1,42 @@
+.formContainer
+{
+	margin-left: 160px;
+	
+	
+}
+.userRecord
+{
+	margin-left: 160px;
+}
+
+
+#adduser
+{
+	background-color: orange;
+	border:none;
+	
+}
+
+.addUserBtn
+{
+	text-align: right;
+}
+
+tr
+{
+	border:5px solid black;
+}
+
+th
+{
+	background-color: grey;
+	color: white;
+	border:1px solid grey; 
+
+}
+
+.userRecord
+{
+	height: auto;
+	width:auto;
+}

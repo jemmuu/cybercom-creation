@@ -2,13 +2,15 @@
 <html>
 <head>
 	<title>Dashboard User</title>
+	<link rel="stylesheet" type="text/css" href="css/nav.css">
+	<link rel="stylesheet" type="text/css" href="css/dashbord_user.css">
 </head>
 <body><!-- 	side navigation bar-->
 <div class="sidenav">
 	
 		<div class="unameCon" id="unameCon">
 			
-			Hello  <label id="uname"> [uname]</label>
+			<h4>Hello  <label id="uname"> [uname]</label></h4>
 		</div>
 
 		<button>
@@ -20,8 +22,8 @@
 		<button id="sessionBtn"  onclick="navSession()">
 			Login<br>
 			Sessions
-		</button  >
-		<button id="logoutBtn"  onclick="logout()">
+		</button id="logout" onclick="logout()">
+		<button>
 			Logout
 		</button>
 
@@ -31,13 +33,16 @@
 <!-- side navigation bar end-->
 
 <!-- main content -->
-		Welcomr to cybercom creation 
 
-		<lable id='baday'></lable>
+<div class="container">
+		<h2>Welcomr to cybercom creation </h2>
 
+		<lable id='baday'>Birthday Notification</lable>
 
+</div>
 
 <!-- mian content end -->
 <script type="text/javascript" src="js/dashbord_user.js"></script>
+<script type="text/javascript" src="js/nav.js"></script>
 </body>
 </html>
