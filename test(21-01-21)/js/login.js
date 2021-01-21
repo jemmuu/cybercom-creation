@@ -25,7 +25,7 @@ function loginCheck() {
 
 	if (email == adminEmail && password == adminPass) {
 
-
+		sessionStorage.setItem('admin', 'true');
 		window.location.href= 'dashbord_admin.html';
 	}
 
