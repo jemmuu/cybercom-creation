@@ -149,7 +149,7 @@ function editRec(index) {
 			if(keys == 'dob')
 			{
 				let dob = new Date(userAray1[index][keys]);
-			 function convertDate(dobF) {
+			 function convertDate(date) {
 						  var yyyy = date.getFullYear().toString();
 						  var mm = (date.getMonth()+1).toString();
 						  var dd  = date.getDate().toString();
@@ -160,7 +160,7 @@ function editRec(index) {
 						  return yyyy + '-' + (mmChars[1]?mm:"0"+mmChars[0]) + '-' + (ddChars[1]?dd:"0"+ddChars[0]);
 						}
 				
-				document.getElementById(keys).value = dob;
+				document.getElementById(keys).value = convertDate(dob);
 				continue;
 			}
 
@@ -170,8 +170,10 @@ function editRec(index) {
 
 
 
-
 		}
+
+userAray1.splice(index,1);
+localStorage.setItem('userAray' ,JSON.stringify(userAray1));
 
 }
 

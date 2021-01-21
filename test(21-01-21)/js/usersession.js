@@ -5,19 +5,19 @@
  let tableData= `<tr>`;
 
 
-			if (localStorage.getItem('sessionData')) {
+			if (localStorage.getItem('loginDetails')) {
 
 					
-				var sessionData = JSON.parse(localStorage.getItem(sessionData));
+				var loginDetails = JSON.parse(localStorage.getItem('loginDetails'));
 
 
 
-					for(cur in sessionData)
+					for(cur in loginDetails)
 					{
-						for(index in sessionData[cur])
+						for(index in loginDetails[cur])
 						{
 
-							tableData+=`<td> ${sessionData[cur][index]} </td>`;
+							tableData+=`<td> ${loginDetails[cur][index]} </td>`;
 						}
 
 						
@@ -28,3 +28,4 @@
 
 
 					document.getElementById('tableData').innerHTML= tableData;
+				}

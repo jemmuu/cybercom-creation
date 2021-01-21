@@ -13,14 +13,27 @@ var userDetails= function(name,logintime,logouttime){
 
 
 	this.name=name;
-	this.logintime=lofintime;
+	this.logintime= logintime;
 	this.logouttime=logouttime;
 
 
 }
 
-var logindetails= [];
+var loginDetails= [];
+
+
 function logout() {
+
+			let logouttime = new Date().toLocaleString();
+
+			let newDetails = new userDetails(userName,logIntime,logouttime);
+
+			loginDetails.push(newDetails);
+
+			localStorage.setItem('loginDetails' ,JSON.stringify(loginDetails));
+
+			console.log(logouttime);
+			console.log('here');
 	
 
 
