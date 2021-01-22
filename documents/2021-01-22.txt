@@ -1,0 +1,7 @@
+work that done today
+-->Material videos 8 in total
+-->created database with provided table details
+           -->learn about reverse enginer option. and made same database from provided er diagram. 
+	   --> install node and made first angualr webapp
+	   --> search about the angualr pros and cons.
+           
