@@ -1,0 +1,8 @@
+ork that done today
+-->Material videos 8 in total
+-->add data in database with provided table details
+-->learn about typescript 
+-->practice all typescript concept trying to cobine in 1 program
+-->made new angular webapp by name angular-demo
+--> learn abour join and practice diffrent query
+           
