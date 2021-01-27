@@ -1,0 +1,6 @@
+work that done today
+-->Material videos 5 in total
+-->learn about typescript 
+-->practice all typescript concept in angular 
+-->practice diffrent query from web
+           
