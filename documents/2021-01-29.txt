@@ -1,0 +1,5 @@
+work that done today
+-->Material videos 5 in total
+-->learn about component of angular & how to use them
+-->practice diffrent query from web
+           
