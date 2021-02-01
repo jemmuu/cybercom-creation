@@ -1,0 +1,5 @@
+to do list
+
+--work on exam task
+-- experment with bootstrap in angular
+-- work on query provided by mam
