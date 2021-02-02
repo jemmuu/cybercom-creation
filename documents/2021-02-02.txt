@@ -1,0 +1,5 @@
+to do list
+
+--work on task from videos
+-- experment with bootstrap in angular with task
+-- watch videos twice some important topics
