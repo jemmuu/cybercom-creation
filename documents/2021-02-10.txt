@@ -1,0 +1,5 @@
+to do list
+
+--work on task from videos(form grop,formarray,form builder)
+-- practice all the lessons try experimenting with it
+
