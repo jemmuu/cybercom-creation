@@ -1,0 +1,32 @@
+
+
+<!-- challenge like counter -->
+<p>test1 component</p><br>
+<p>chalenge like counter</p><br>
+<input type="number" readonly  [value]="counter" (mouseover)='onalert($event)' ><br>
+<input type="button" class="btn-primary" [class.btn-dark]=" like" (click)="onclick()"  value="like" [style.backgroundColor]="(like)?'':''" /> 
+<table>
+        <tr>
+            <td [attr.colspan]= col ></td>
+        </tr>
+
+</table>
+
+<!-- challenge like counter end-->
+
+
+
+<!-- list of data from services -->
+ <!-- <p>component one list data</p>
+
+ <ul >
+    <li  *ngFor="let lists of list">{{lists}}</li>
+
+
+</ul> -->
+<p (click)="navto()"  routerLink="./templatevariable"> test of templete variable "click me"</p>
+<p routerLink="./twowaybinding" class="nav-pills">go to componenet two-way binding </p>
+<p routerLink="./pipeTest">go to componenet app-pipe-test </p>
+<p routerLink="./testDirectives">go to componenet test directive  </p>
+<p routerLink="./formtest">go to componenet form testing  </p>
+<p routerLink="./login">go to componenet log in </p>

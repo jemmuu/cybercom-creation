@@ -1,0 +1,64 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+
+<body>
+    <div class="login-form">
+        <div class="alert-danger" *ngIf='frm.errors'>Login creditial invalid</div>
+        <form action="" method="post" [formGroup]='frm' (ngSubmit)='login()'>
+            <div class="avatar"><i class="bi bi-person"></i></div>
+            <h4 class="modal-title">Login to Your Account</h4>
+
+            <div class="form-group" formGroupName='formgrp'>
+                <div class="form-group">
+                    <input type="text" formControlName='username' class="form-control" placeholder="Username"
+                        required="required" (keydown.enter)=" ngOnInit()" (keyup.enter)=" ngOnInit()">
+                    <div class="alert-success" *ngIf='username()?.pending'><i class="bi bi-arrow-repeat">checking
+                            username..</i></div>
+                    <div class="alert-success" *ngIf="username()?.touched && !username()?.valid">
+                        <div *ngIf='username()?.errors?.required'>name required bro</div>
+                        <div *ngIf='username()?.errors?.containNoblankspace'>no space allow bro</div>
+                        <div *ngIf='username()?.errors?.uniqueusername'>username taken </div>
+                        <div *ngIf='username()?.errors?.minlength'>name required
+                            {{username()?.errors?.minlength?.requiredLength}} length</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="password" formControlName='password' class="form-control" placeholder="Password"
+                        required="required" (keydown.enter)=" ngOnInit()" (keyup.enter)=" ngOnInit()">
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="text" formControlName='frmArray' class="form-control" placeholder="Add hobby" #hobby
+                    (keydown.enter)='arraypush(hobby)' required="required">
+
+                <ul class="list-group-item">
+                    <li *ngFor="let hobby of frmArray()?.controls" class="list-group-item">{{hobby.value}}</li>
+                </ul>
+            </div>
+            <div class="form-group small clearfix">
+                <label class="form-check-label"><input type="checkbox"> Remember me</label>
+                <a href="#" class="forgot-link">Forgot Password?</a>
+            </div>
+            <input type="submit" class="btn btn-primary btn-block btn-lg" value="Login">
+            <button type="button" (click)='toast()' class="btn btn-primary btn-block btn-lg" (keydown)=" ngOnInit()"
+                (keyup)=" ngOnInit()">Toast</button>
+
+            <button type="button" (click)='compressImg()' class="btn btn-primary btn-block btn-lg"
+                (keydown)=" ngOnInit()" (keyup)=" ngOnInit()">Upload image </button>
+            <br>
+            <img *ngIf="imgBefore" [src]="imgBefore" alt=""  class="btn-block">
+            <p *ngIf="imgBefore" >size in bytes before : {{bsize}}</p>
+            <img *ngIf="imgAfter" [src]="imgAfter" alt="" class="btn-block">
+            <p *ngIf="imgAfter">size in bytes After : {{asize}}</p>
+        </form>
+        <div class="text-center small">Don't have an account? <a href="#">Sign up</a></div>
+
+
+    </div>
+</body>
+
+</html>

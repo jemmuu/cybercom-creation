@@ -1,0 +1,46 @@
+<p>form-test works!</p>
+
+
+<form class="form" #f='ngForm' (ngSubmit)='log(f)'>
+    <div class="form-group">
+        <label for='fname'>First name</label>
+        <input type="text" required minlength="4" maxlength="8" pattern="^[A-Za-z -]+$" (change)='log(firstname)'
+            class="form-control" ngModel name="firstname" id="firstname" #firstname="ngModel">
+
+        <div class="alert-danger" *ngIf="firstname.touched && !firstname.valid">
+            <div *ngIf="firstname.errors?.required">Enter the first name</div>
+            <div class="alert-danger" *ngIf="firstname.errors?.minlength">min length 4</div>
+            <div class="alert-danger" *ngIf="firstname.errors?.maxlength">max length 8</div>
+            <div class="alert-danger" *ngIf="firstname.errors?.pattern">pattern does not match</div>
+        </div>
+    </div>
+    <div ngModelGroup='one'>
+        <div class="form-group">
+            <label for="comment">comment</label>
+            <textarea rows='5' cols='10' class="form-control" id="comment" ngModel name="comment"></textarea>
+        </div>
+
+        <div class="checkbox"   >
+            <label for="chk">
+                    <input type="checkbox" ngModel name="datak"> chkTest
+            </label>
+        </div>
+
+        <div  class="dlist">
+            <label for="dlistTest">
+                <select name="dlistTest" id="radio1" class="form-control">
+                    <option *ngFor = 'let datak of data'  value="data">{{datak}}</option>
+                </select>
+            </label>
+        </div>
+
+        <div class="radio1" *ngFor = 'let datak of data'  >
+            <label for="chk">
+                    <input type="radio" ngModel name="datak" [value]="datak"> {{datak}}
+            </label>
+        </div>
+
+    </div>
+  
+    <button class="btn btn-primary" [disabled]='!f.valid'>Submit</button>
+</form>

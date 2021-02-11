@@ -1,0 +1,38 @@
+<span (dblclick)='ifTest=!ifTest' *ngIf="ifTest;then truec else falsec" >ng if true test (double click to toggle to false case )</span>
+<ng-template #truec  > <span (dblclick)='ifTest=!ifTest'>ng if true test (double click to toggle to false case )</span></ng-template>
+<ng-template #falsec  ><span (dblclick)='ifTest=!ifTest'>ng if false test (double click to toggle to true case )</span></ng-template>
+
+<div [hidden]='ifTest'>test hidden true </div>
+<div [hidden]='!ifTest'>test hidden false </div>
+
+
+<ul class="nav nav-pills">
+    <li 
+        [ngClass]="{
+           'btn-primary': option == 'op1'
+
+        }"><a (click)="option = 'op1'">optoon1</a></li>&nbsp;
+    <li [class.active]="option == 'op2'"><a (click)="option = 'op2'">option2</a></li>
+</ul>      
+
+<div [ngSwitch]='option'>
+    <div *ngSwitchCase="'op1'" >option 1 div</div>
+    <div *ngSwitchCase="'op2'" >option 2 div </div>
+    <div *ngSwitchDefault>nutral select </div>
+
+</div>
+
+<button class="btn-primary"(click)='onload()'>load</button>
+<ul>
+    <li *ngFor="let datak of datan; index as i; trackBy : track" [ngStyle]="{'fontWeight': 'bold'}" >{{i}}-{{datak}} &nbsp;
+        <button class="btn-primary"(click)='removerecord(i)'>remove</button>
+        <button class="btn-primary"(click)='updaterecord(i)'>change</button>
+    
+    </li>
+</ul>
+
+<button class="btn-primary"(click)='addrecord()'>add record</button>
+
+
+<br>
+<input type="text" appTestInputdirective >
