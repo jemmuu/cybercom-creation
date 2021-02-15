@@ -1,0 +1,3 @@
+--worked on videos
+-- find new metods which was eplaced by the methods use in the tutorials
+-- work on errors one by one and find solution 
