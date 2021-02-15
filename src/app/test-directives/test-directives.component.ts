@@ -1,7 +1,7 @@
 import { stringify } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
-import { ServiceTestService } from '../service-test.service';
-import { testService } from '../test.service';
+import { ServiceTestService } from '../services/service-test.service';
+import { testService } from '../services/test.service';
 
 @Component({
   selector: 'app-test-directives',

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ServiceTestService } from '../service-test.service';
+import { ServiceTestService } from '../services/service-test.service';
 
 @Component({
   selector: 'app-form-test',

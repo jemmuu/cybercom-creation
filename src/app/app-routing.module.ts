@@ -1,3 +1,4 @@
+import { HttpTestComponent } from './http-test/http-test.component';
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FormTestComponent } from './form-test/form-test.component';
@@ -16,7 +17,8 @@ const routes: Routes = [
   {path:"pipeTest",component:PipeTestComponent},
   {path:"testDirectives",component:TestDirectivesComponent},
   {path:"formtest",component:FormTestComponent},
- {path:"login", component:LoginTestComponent}
+ {path:"login", component:LoginTestComponent},
+ {path: "http", component:HttpTestComponent}
 
 
 ];
