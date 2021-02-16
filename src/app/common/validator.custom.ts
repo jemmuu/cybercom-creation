@@ -27,4 +27,17 @@ export class customValidator
                 });
 
     }
+
+    static dateValidatorFuture(control : AbstractControl) :  ValidationErrors | null
+    {
+          let currentDate = new Date();
+         
+          const inputDate = new Date(control.value);
+
+          if (inputDate > currentDate)
+      {
+            return {dateValidatorFuture : true};
+          }
+          return null;
+        } 
 }

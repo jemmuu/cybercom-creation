@@ -1,4 +1,4 @@
-import { customValidator } from './validator.custom';
+import { customValidator } from '../common/validator.custom';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormArray, FormBuilder } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';

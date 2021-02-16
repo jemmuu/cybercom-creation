@@ -100,7 +100,7 @@ export class HttpTestComponent implements OnInit {
       (error : allError) => {
         if(error instanceof notfound)
         {
-          console.log('error ');
+          console.log(error);
           this.toastr.error("data is already deleted from th database please reload", 'error');
         }
         else

@@ -54,7 +54,7 @@ export class testService{
 
     deleteData(data : any)
         {
-           return this.http.delete(this.url + '/' + data)
+           return this.http.delete(this.url + 'n/' + data)
            .pipe(catchError((error : Response) => {
 
             if(error.status === 404)

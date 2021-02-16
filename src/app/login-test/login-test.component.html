@@ -15,7 +15,7 @@
             <div class="form-group" formGroupName='formgrp'>
                 <div class="form-group">
                     <input type="text" formControlName='username' class="form-control" placeholder="Username"
-                        required="required" (keydown.enter)=" ngOnInit()" (keyup.enter)=" ngOnInit()">
+                         (keydown.enter)=" ngOnInit()" (keyup.enter)=" ngOnInit()">
                     <div class="alert-success" *ngIf='username()?.pending'><i class="bi bi-arrow-repeat">checking
                             username..</i></div>
                     <div class="alert-success" *ngIf="username()?.touched && !username()?.valid">

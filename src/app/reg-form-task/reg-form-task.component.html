@@ -1,0 +1,139 @@
+<p>reg-form-task works!</p>
+
+<body class="container">
+
+<form action="" class="form" [formGroup]='form'>
+
+
+    <div class="form-group row" formGroupName='name'>
+        <div class="col-md">
+            <input type="text" formControlName='firstName' class="form-control" id="firstName" placeholder="First Name*">
+            <div class="alert-danger" *ngIf="firstName()?.touched && !firstName()?.valid">
+                <div *ngIf="firstName()?.errors?.required">Please Enter First Name</div>
+                <div *ngIf="firstName()?.errors?.minlength">Min length should be 4</div>
+                <div *ngIf="firstName()?.errors?.pattern">should not contain numbers</div>
+                <div *ngIf="firstName()?.errors?.containNoblankspace">Name should not contain any Space</div>
+            </div>
+        </div>
+        <div class="col-md">
+            <input type="text" formControlName='lastName' class="form-control" id="lastName" placeholder="Last Name*">
+            <div class="alert-danger" *ngIf="lastName()?.touched && !lastName()?.valid">
+                <div *ngIf="lastName()?.errors?.required">Please Enter Last Name</div>
+                <div *ngIf="lastName()?.errors?.minlength">Min length should be 4</div>
+                <div *ngIf="lastName()?.errors?.pattern">should not contain numbers</div>
+                <div *ngIf="lastName()?.errors?.containNoblankspace">Last Name should not contain any Space</div>
+
+            </div>
+        </div>
+        
+    </div>
+
+
+    <div class="form-group row-md email">
+        <input type="email" formControlName='email' class="form-control" placeholder="Email*" id="email">
+        <div class="alert-danger" *ngIf="emailChk()?.touched && !emailChk()?.valid">
+            <div *ngIf="emailChk()?.errors?.required">Please Enter Email</div>
+             <div *ngIf="emailChk()?.errors?.email">Please Enter correct email</div> 
+            <div *ngIf="emailChk()?.errors?.containNoblankspace">Email should not contain any Space</div>
+        </div>
+    </div>
+
+
+   <div class="form-group row">
+        <div class="col-md">
+            <input type="tel" formControlName='contactNumber' placeholder="contact Number*" class="form-control" id="contactNumber">
+            <div class="alert-danger" *ngIf="contactNumber()?.touched && !contactNumber()?.valid">
+                <div *ngIf="contactNumber()?.errors?.required">Please Enter contact Number</div>
+                <div *ngIf="contactNumber()?.errors?.pattern">Please Enter only numbers</div>
+                <div *ngIf="contactNumber()?.errors?.containNoblankspace">Number should not contain any Space</div>
+
+            </div>
+        
+        </div>
+        <div class="col-md">
+            <input type="tel" formControlName='alter' placeholder="alternate contact Number" class="form-control" id="alternateContactNumber">
+            <div class="alert-danger" *ngIf="alter()?.touched && !alter()?.valid">
+                <div *ngIf="alter()?.errors?.required">Please Enter contact Number</div>
+                <div *ngIf="alter()?.errors?.pattern">Please Enter only numbers</div>
+                <div *ngIf="alter()?.errors?.containNoblankspace">Number should not contain any Space</div>
+
+            </div>
+        </div>
+
+    </div>
+ 
+    <div class="form-group row">
+        <div class="col-md">
+            <input type="text" formControlName='designation' placeholder="Designation*" class="form-control" id="designation">
+            <div class="alert-danger" *ngIf="designation()?.touched && !designation()?.valid">
+                <div *ngIf="designation()?.errors?.required">Please Enter First Name</div>
+                <div *ngIf="designation()?.errors?.minlength">Min length should be 4</div>
+                <div *ngIf="designation()?.errors?.pattern">should not contain numbers</div>
+                <div *ngIf="designation()?.errors?.containNoblankspace">Name should not contain any Space</div>
+            </div>
+        </div>
+        <div class="col-md">
+            
+            <input type="number" placeholder="Years of Experience" class="form-control" id="yearOfExperience">
+            
+        </div>
+        <div class="col-md">
+            <input type="date" formControlName='joinDate' placeholder="Joining date" class="form-control"  id="joiningDate">
+            <div class="alert-danger" *ngIf="this.form.get('joinDate')?.touched && !designation()?.valid">
+                <div *ngIf="this.form.get('joinDate')?.errors?.dateValidatorFuture">Please Enter valid date(no Future Date allow)</div>
+                <!-- <div *ngIf="this.form.get('joinDate')?.errors?.required">Please Enter First Name</div>
+                 -->
+            </div>
+        </div>
+
+    </div>
+
+    <div class="form-group row-md add">
+        <textarea class="form-control" formControlName='currentAddress' rows="4" placeholder="Current Address*" id="email"></textarea>
+        <div class="alert-danger" *ngIf="this.form.get('currentAddress')?.touched && !this.form.get('currentAddress')?.valid">
+            <div *ngIf="this.form.get('currentAddress')?.errors?.required">Please Enter address</div>
+            
+        </div>
+    </div>
+    
+    <div class="form-group row">
+        <div class="col-md">
+            <input type="text" placeholder="City" class="form-control" id="city">
+        </div>
+        <div class="col-md">
+            <input type="text" placeholder="State" class="form-control" id="state">
+        </div>
+        <div class="col-md">
+            <input type="number" placeholder="Pincode" class="form-control" id="Pincode">
+        </div>
+
+    </div>
+
+    <div class="form-group row">
+        <div class="col-md">
+            <input type="text" formControlName='panNumber' placeholder="PAN Number*" class="form-control" id="panNumber">
+            <div class="alert-danger" *ngIf="panNumber()?.touched && !panNumber()?.valid">
+                <div *ngIf="panNumber()?.errors?.required">Please Enter PAN Number</div>
+                <div *ngIf="panNumber()?.errors?.pattern">Please Enter only numbers</div>
+                <div *ngIf="panNumber()?.errors?.containNoblankspace">PAN Number should not contain any Space</div>
+
+            </div>
+        </div>
+        <div class="col-md">
+            <input type="text" formControlName='aadharNumber' placeholder="Aadhar Number*" class="form-control" id="aadharNumber">
+            <div class="alert-danger" *ngIf="aadharNumber()?.touched && !aadharNumber()?.valid">
+                <div *ngIf="aadharNumber()?.errors?.required">Please Enter aadhar Number</div>
+                <div *ngIf="aadharNumber()?.errors?.pattern">Please Enter only numbers</div>
+                <div *ngIf="aadharNumber()?.errors?.containNoblankspace">Aadhar Number should not contain any Space</div>
+
+            </div>
+        </div>
+        <div class="col-md">
+            <input type="text" placeholder="Passport Number" class="form-control" id="passportNumber">
+        </div>
+
+    </div>
+
+    <input type="submit" class="btn btn-primary col-md" [disabled]='!form.valid'>
+</form>
+</body>

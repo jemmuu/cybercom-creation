@@ -20,6 +20,7 @@ import { LoginTestComponent } from './login-test/login-test.component';
 import { NgxImageCompressService } from 'ngx-image-compress';
 import { HttpTestComponent } from './http-test/http-test.component';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
+import { RegFormTaskComponent } from './reg-form-task/reg-form-task.component';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
     FormTestComponent,
     LoginTestComponent,
     HttpTestComponent,
+    RegFormTaskComponent,
     
     
 	  
