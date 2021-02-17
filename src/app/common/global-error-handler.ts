@@ -20,6 +20,11 @@ handleError(error: any)
         if (error instanceof HttpErrorResponse ) {
           alert("something went wrong");
         }
+        else
+        {
+          console.log('catching error in global');
+        alert(error.message);
+        }
           
         }
     

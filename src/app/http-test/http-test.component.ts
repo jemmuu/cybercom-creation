@@ -37,8 +37,8 @@ export class HttpTestComponent implements OnInit {
 
         this.post = response;
 
-      }); 
-      
+      });
+
   }
 
   addData(input: HTMLInputElement) {
@@ -65,36 +65,34 @@ export class HttpTestComponent implements OnInit {
         this.post.splice(index, 1, Response);
         console.log(Response);
 
-      }, 
-      (error : Response) => {
-        if(error instanceof badError)
-        {
-          this.toastr.error("data is already deleted from th database please reload", 'error');
-        }
-        else throw error;
-      })
+      },
+        (error: Response) => {
+          if (error instanceof notfound) {
+            this.toastr.error("data is already deleted from th database please reload", 'error');
+          }
+          else throw error;
+        })
   }
 
 
   deleteData(data: any) {
     this.service.deleteData(data.id)
       .subscribe(
-        
-      (response) => {
-         let index = this.post.indexOf(data);
-        console.log(response);
-         this.post.splice(index, 1);
-        
-      }, 
-      (error : allError) => {
-        if(error instanceof notfound)
-        {
-          console.log(error);
-          this.toastr.error("data is already deleted from th database please reload", 'error');
-        }
-        else throw error;
-        
-      })
+
+        (response) => {
+          let index = this.post.indexOf(data);
+          console.log(response);
+          this.post.splice(index, 1);
+
+        },
+        (error: allError) => {
+          if (error instanceof notfound) {
+            console.log(error);
+            this.toastr.error("data is already deleted from th database please reload", 'error');
+          }
+          else throw error;
+
+        })
   }
 
 

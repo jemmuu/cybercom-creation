@@ -145,46 +145,56 @@ export class RegFormTaskComponent implements OnInit {
   }
 
 
-firstName()
+
+
+get fn()
 {
   return this.form.get('name.firstName');
 }
 
-lastName()
+get lastName()
 {
   return this.form.get('name.lastName');
 }
 
-emailChk()
+get mailchk()
 {
   return this.form.get('email');
 }
 
-contactNumber()
+
+
+get contactNumber()
 {
   return this.form.get('contactNumber');
 }
 
-alter()
+
+
+get alter()
 {
   return this.form.get('alter');
 }
 
-designation()
+
+
+get designation()
 {
   return this.form.get('designation');
 }
 
-panNumber()
+
+
+get panNumber()
 {
   return this.form.get('panNumber');
 
 }
 
-aadharNumber()
+
+get aadharNumber()
 {
   return this.form.get('aadharNumber');
-
 }
 
 
