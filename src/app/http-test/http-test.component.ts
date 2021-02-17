@@ -37,11 +37,8 @@ export class HttpTestComponent implements OnInit {
 
         this.post = response;
 
-      }, 
-      (error: Response) => {
-        if (error)
-          this.toastr.error("something went wrong", 'error');
-      })
+      }); 
+      
   }
 
   addData(input: HTMLInputElement) {
@@ -53,10 +50,6 @@ export class HttpTestComponent implements OnInit {
         console.log(post.id);
         console.log(response.id);
 
-      },
-      (error: Response) => {
-        if (error)
-          this.toastr.error("something went wrong", 'error');
       });
 
     input.value = '';
@@ -78,11 +71,7 @@ export class HttpTestComponent implements OnInit {
         {
           this.toastr.error("data is already deleted from th database please reload", 'error');
         }
-        else
-        {
-        console.log(error);
-        this.toastr.error("something went wrong", 'error');
-        }
+        else throw error;
       })
   }
 
@@ -103,11 +92,8 @@ export class HttpTestComponent implements OnInit {
           console.log(error);
           this.toastr.error("data is already deleted from th database please reload", 'error');
         }
-        else
-        {
-        console.log(error);
-        this.toastr.error("something went wrong", 'error');
-        }
+        else throw error;
+        
       })
   }
 

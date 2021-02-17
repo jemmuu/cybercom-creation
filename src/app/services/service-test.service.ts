@@ -9,5 +9,5 @@ export class ServiceTestService {
 
   testFun(){
     return ["cli service","l2","l3"];
-    }
+  }
 }

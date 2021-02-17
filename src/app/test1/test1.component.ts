@@ -1,12 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { ServiceTestService } from '../services/service-test.service';
 import { testService } from '../services/test.service';
+import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 
 
 @Component({
   selector: 'app-test1',
   templateUrl: './test1.component.html',
-  styleUrls: ['./test1.component.css']
+  styleUrls: ['./test1.component.css'],
+  
 })
 export class Test1Component implements OnInit {
 

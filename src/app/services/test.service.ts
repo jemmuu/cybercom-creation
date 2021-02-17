@@ -6,9 +6,11 @@ import { allError } from '../common/allError';
 import { notfound } from '../common/404-error';
 import { badError } from '../common/400-error';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable(
+  {
+    providedIn : 'root'
+  }
+)
 
 
 
@@ -28,11 +30,14 @@ export class testService{
     getData()
     {
         return this.http.get(this.url);
+       
     }
 
     addData(data : any)
     {
         return this.http.post(this.url, JSON.stringify(data));
+        
+        
     }
 
     updateData(data : any)
@@ -54,7 +59,7 @@ export class testService{
 
     deleteData(data : any)
         {
-           return this.http.delete(this.url + 'n/' + data)
+           return this.http.delete(this.url + '/' + data)
            .pipe(catchError((error : Response) => {
 
             if(error.status === 404)

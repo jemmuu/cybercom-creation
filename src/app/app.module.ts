@@ -1,5 +1,5 @@
 import { compileComponentFromMetadata } from '@angular/compiler';
-import { NgModule } from '@angular/core';
+import { ErrorHandler, NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -21,6 +21,8 @@ import { NgxImageCompressService } from 'ngx-image-compress';
 import { HttpTestComponent } from './http-test/http-test.component';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { RegFormTaskComponent } from './reg-form-task/reg-form-task.component';
+ import { globalErrorHandler } from './common/global-error-handler';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -37,7 +39,9 @@ import { RegFormTaskComponent } from './reg-form-task/reg-form-task.component';
     FormTestComponent,
     LoginTestComponent,
     HttpTestComponent,
-    RegFormTaskComponent,
+    RegFormTaskComponent
+   
+    
     
     
 	  
@@ -47,6 +51,7 @@ import { RegFormTaskComponent } from './reg-form-task/reg-form-task.component';
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
+    RouterModule,
     ReactiveFormsModule,
     BrowserAnimationsModule, 
     ToastrModule.forRoot({
@@ -58,7 +63,11 @@ import { RegFormTaskComponent } from './reg-form-task/reg-form-task.component';
     }),
     
   ],
-  providers: [testService,NgxImageCompressService],
+  providers: [
+    testService,
+    NgxImageCompressService,
+    {provide : ErrorHandler , useClass : globalErrorHandler}
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
