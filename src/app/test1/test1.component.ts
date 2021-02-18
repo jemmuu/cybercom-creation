@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ServiceTestService } from '../services/service-test.service';
 import { testService } from '../services/test.service';
-import { RouterModule } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
@@ -16,7 +16,7 @@ export class Test1Component implements OnInit {
 
   list;
 
-  constructor(service: ServiceTestService) {
+  constructor(service: ServiceTestService, private router : Router) {
 
     this.list = service.testFun();
    }
@@ -56,6 +56,14 @@ export class Test1Component implements OnInit {
   {
 
       alert("routing to other componenet");
+  }
+
+  navigate()
+  {
+      this.router.navigate(['/http', 2], {
+        queryParams : {test: 'wer', page: 8}
+
+      })
   }
 
 }

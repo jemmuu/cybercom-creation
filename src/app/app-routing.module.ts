@@ -19,7 +19,7 @@ const routes: Routes = [
   {path:"testDirectives",component:TestDirectivesComponent},
   {path:"formtest",component:FormTestComponent},
  {path:"login", component:LoginTestComponent},
- {path: "http", component:HttpTestComponent},
+ {path: "http/:id", component:HttpTestComponent},
  {path:'task' , component:RegFormTaskComponent}
 
 

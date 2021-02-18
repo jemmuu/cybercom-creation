@@ -2,12 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { testService } from '../services/test.service';
-import { ServiceTestService } from '../services/service-test.service';
+import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { error } from 'console';
-import { allError } from '../common/allError';
 import { notfound } from '../common/404-error';
-import { badError } from '../common/400-error';
+import { allError } from '../common/allError';
+import { combineLatest } from 'rxjs';
+import { map, switchMap } from 'rxjs/operators';
+
+
+
 
 @Component({
   selector: 'app-http-test',
@@ -16,10 +19,10 @@ import { badError } from '../common/400-error';
 })
 export class HttpTestComponent implements OnInit {
 
-  post: any;
+  _post: any;
 
 
-  constructor(private service: testService, private toastr: ToastrService) {
+  constructor(private service: testService, private toastr: ToastrService, private router: ActivatedRoute) {
 
     // http.get(this.url)
     //   .subscribe(response => {
@@ -31,22 +34,91 @@ export class HttpTestComponent implements OnInit {
   }
 
   ngOnInit(): void {
+      // added function for getting parameter from the url and load data
+                    // this.router.paramMap.subscribe(params => {
 
-    this.service.getData()
-      .subscribe(response => {
+                    //   let id: number = Number(params.get('id'));
+                    //   console.log(id);
+                    //   //calling service for getting data
+                    //   this.service.getData()
+                    //     .subscribe(response => {
 
-        this.post = response;
+                    //       this._post = response;
 
-      });
+                    //     });
+                    // })
 
-  }
+                    //   // getting query parameters from url path
+                    // this.router.queryParamMap.subscribe(qparams => {
+
+                    //   let page: number = Number(qparams.get('page'));
+                    //     console.log(page);
+
+                    // })
+
+    //combin used for params and queryparams
+    combineLatest([
+      this.router.paramMap,
+       this.router.queryParamMap
+       
+       ])
+                                        .pipe(switchMap( combined => {
+
+                                          let id = Number(combined[0].get('id'));
+                                          console.log(id);
+                                          //calling service for getting data
+                                            //  this.service.getData()
+                                            //  .subscribe(response => {
+                                            //             this._post = response;});
+                                          
+
+                                          let page: number = Number(combined[1].get('page'));
+                                          let order = combined[1].get('test');
+                                          console.log(page);
+                                          console.log(order)
+
+                                          return this.service.getData();
+                                        }
+
+
+                                        ))
+
+                                        //calling service for getting data using swichmap to avoid subscribe in subcribe
+                                        .subscribe(combined => { 
+                                          
+                                          this._post = combined
+
+                                          
+
+                                          // let id = Number(combined[0].get('id'));
+                                          // console.log(id);
+                                          // //calling service for getting data
+                                          //    this.service.getData()
+                                          //    .subscribe(response => {
+                                          //               this._post = response;});
+                                          
+
+                                          // let page: number = Number(combined[1].get('page'));
+                                          // let order = combined[1].get('test');
+                                          // console.log(page);
+                                          // console.log(order)
+
+
+                                        
+                                        
+                                        
+                                        })
+
+
+
+   }
 
   addData(input: HTMLInputElement) {
     let post: any = { title: input.value };
     this.service.addData(post)
       .subscribe((response: any) => {
         post.id = response.id;
-        this.post.splice(0, 0, post);
+        this._post.splice(0, 0, post);
         console.log(post.id);
         console.log(response.id);
 
@@ -60,9 +132,9 @@ export class HttpTestComponent implements OnInit {
   updateData(data: any) {
     this.service.updateData(data)
       .subscribe(Response => {
-        let index = this.post.indexOf(data);
+        let index = this._post.indexOf(data);
         console.log(index);
-        this.post.splice(index, 1, Response);
+        this._post.splice(index, 1, Response);
         console.log(Response);
 
       },
@@ -80,9 +152,9 @@ export class HttpTestComponent implements OnInit {
       .subscribe(
 
         (response) => {
-          let index = this.post.indexOf(data);
+          let index = this._post.indexOf(data);
           console.log(response);
-          this.post.splice(index, 1);
+          this._post.splice(index, 1);
 
         },
         (error: allError) => {
