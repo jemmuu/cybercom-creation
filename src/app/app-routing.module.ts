@@ -9,6 +9,8 @@ import { CompanyComponent } from './modules/company-module/company/company.compo
 import { AddEmployeeComponent } from './modules/employee-module/add-employee/add-employee.component';
 import { EmployeeListComponent } from './modules/employee-module/employee-list/employee-list.component';
 import { EmployeeComponent } from './modules/employee-module/employee/employee.component';
+import { ReqResLoginComponent } from './req-res-login/req-res-login.component';
+import { ResReqComponent } from './res-req/res-req.component';
 
 
 const routes: Routes = [
@@ -43,7 +45,12 @@ const routes: Routes = [
                   //   {path: 'cmsList' , component:CmsListComponent }
 
                   // ] 
-                }
+
+                  
+                },
+
+                {path:'login', component:ReqResLoginComponent},
+                {path: 'listUSer', component: ResReqComponent}
 
 
 

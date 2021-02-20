@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { ErrorHandler, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,24 +9,39 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { CMSModuleModule } from './modules/cmsmodule/cmsmodule.module';
 import { CompanyModuleModule } from './modules/company-module/company-module.module';
 import { EmployeeModuleModule } from './modules/employee-module/employee-module.module';
+import { HttpClientModule} from '@angular/common/http';
+import { ResReqComponent } from './res-req/res-req.component'
+import { ReqResGetUserService } from './_services/req-res-get-user.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatCardModule} from '@angular/material/card';
+import { globalErrorHandler } from './common/global-errorHandler';
+import { ReqResLoginComponent } from './req-res-login/req-res-login.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
+    ResReqComponent,
+    ReqResLoginComponent,
+    NavBarComponent,
        
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule,
-    BsDropdownModule.forRoot(),
-   TooltipModule.forRoot(),
-   ModalModule.forRoot(),
+    FormsModule,
+    HttpClientModule,
+    MatCardModule,  
    CMSModuleModule,
    CompanyModuleModule,
-   EmployeeModuleModule
+   EmployeeModuleModule,
+   BrowserAnimationsModule,
+   ReactiveFormsModule
   ],
-  providers: [],
+  providers: [ReqResGetUserService,
+    {provide : ErrorHandler , useClass : globalErrorHandler}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
