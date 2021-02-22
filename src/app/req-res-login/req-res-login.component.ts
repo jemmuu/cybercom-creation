@@ -26,7 +26,7 @@ export class ReqResLoginComponent implements OnInit {
     });
 
     if (localStorage.getItem('currentUser') !== null) {  
-      this.router.navigate(['']);  
+      this.router.navigate(['/home']);  
     }  
 
   }
@@ -55,7 +55,7 @@ export class ReqResLoginComponent implements OnInit {
       {
         console.log(res.token);
         localStorage.setItem('currentUser', "loggedin");
-        this.router.navigate(['']);
+        this.router.navigate(['/home']);
         
       }
          

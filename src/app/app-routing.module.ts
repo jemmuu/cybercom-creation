@@ -59,7 +59,8 @@ const routes: Routes = [
 
                 {path:'login', component:ReqResLoginComponent},
                 {path:'home',component:HomeComponent  ,  canActivate: [AuthGuard]},
-                {path: 'listUSer', component: ResReqComponent,canActivate: [AuthGuard]}
+                {path: 'listUSer', component: ResReqComponent,canActivate: [AuthGuard]},
+                {path: '',  redirectTo: '/login', pathMatch: 'full'}
 
 
 
