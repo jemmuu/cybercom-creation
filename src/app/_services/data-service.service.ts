@@ -21,7 +21,14 @@ export class DataServiceService {
      return  this.http.get(this.url)
       .pipe(map(Response=>Response),catchError(this.errorHandle))
     }
-
+    
+    addData(data: any) {
+      return this.http.post(this.url, data)
+        .pipe(map(Response=>Response),
+          catchError((this.errorHandle)));
+  
+  
+    }
 
 private errorHandle(error : Response)
 {

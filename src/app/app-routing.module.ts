@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './home/home.component';
 import { AddCmsComponent } from './modules/cmsmodule/add-cms/add-cms.component';
 
 import { CmsListComponent } from './modules/cmsmodule/cms-list/cms-list.component';
@@ -9,13 +10,18 @@ import { CompanyComponent } from './modules/company-module/company/company.compo
 import { AddEmployeeComponent } from './modules/employee-module/add-employee/add-employee.component';
 import { EmployeeListComponent } from './modules/employee-module/employee-list/employee-list.component';
 import { EmployeeComponent } from './modules/employee-module/employee/employee.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { ReqResLoginComponent } from './req-res-login/req-res-login.component';
 import { ResReqComponent } from './res-req/res-req.component';
+import { AuthGuard } from './_services/auth-guard.service';
 
 
 const routes: Routes = [
+                   
+                    
                     {path: 'company' , 
                     component:CompanyComponent,
+                    canActivate: [AuthGuard],
                     loadChildren: ()=> import ('./modules/company-module/company-module.module').then(m=>m.CompanyModuleModule)
                     
                     //children:[ {path: 'companyConfiguration' ,component:CompanyConfigurationComponent },]
@@ -24,6 +30,7 @@ const routes: Routes = [
 
                   {
                     path: 'employee' , component:EmployeeComponent,
+                    canActivate: [AuthGuard],
                     loadChildren:()=> import ('./modules/employee-module/employee-module.module').then(m=>m.EmployeeModuleModule)
                     
                     // children:[
@@ -37,6 +44,7 @@ const routes: Routes = [
 
                   {path: 'cms' , 
                   component:CMSComponent,
+                  canActivate: [AuthGuard],
                   loadChildren:()=> import ('./modules/cmsmodule/cmsmodule.module').then(m=>m.CMSModuleModule)
                   
                   // children:[
@@ -50,7 +58,8 @@ const routes: Routes = [
                 },
 
                 {path:'login', component:ReqResLoginComponent},
-                {path: 'listUSer', component: ResReqComponent}
+                {path:'home',component:HomeComponent  ,  canActivate: [AuthGuard]},
+                {path: 'listUSer', component: ResReqComponent,canActivate: [AuthGuard]}
 
 
 

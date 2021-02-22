@@ -18,6 +18,8 @@ import { globalErrorHandler } from './common/global-errorHandler';
 import { ReqResLoginComponent } from './req-res-login/req-res-login.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AuthGuard } from './_services/auth-guard.service';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ResReqComponent,
     ReqResLoginComponent,
     NavBarComponent,
+    HomeComponent,
        
   ],
   imports: [

@@ -17,6 +17,7 @@ export class globalErrorHandler  implements ErrorHandler
             alert('something wrong with server ');
         }
         else{
+            console.log('global error');
             alert(`${error.message}  shows error`);        }
     }
 
