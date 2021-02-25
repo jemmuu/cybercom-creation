@@ -1,0 +1,30 @@
+.row
+{
+    display:flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.col
+{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 3px;
+    box-shadow: 0 4px 8px 0;
+    margin-top: 2rem;
+    margin-left: 1.5rem;
+    border-radius: 10%;
+}
+
+.card
+{
+    
+    padding: 4px;
+    min-width: 250px;
+    text-align: center;
+    border-radius: 10%;
+    
+    
+}

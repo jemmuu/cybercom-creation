@@ -1,0 +1,44 @@
+
+
+
+.container-row
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 10%;
+    
+}
+
+.col
+{
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 8px 0;
+    padding: 1rem;
+    width: 500px;
+    justify-content: center;
+    text-align: center;
+    
+    
+}
+
+.submit
+{
+    background-color: #55efc4;
+    height: 2rem;
+    border-radius: 33%;
+    border:none;
+}
+
+input
+{
+    height: 2rem;
+    border-radius: 10%;
+    border:none;
+}
+
+.alert-danger
+{
+    background-color: #d63031;
+}
