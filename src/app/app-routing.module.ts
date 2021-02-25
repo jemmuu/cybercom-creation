@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './core/services/AuthGuard/auth.guard';
 import { DeactivateGuardGuard } from './core/services/CanDeactivate/deactivate-guard.guard';
 //import { AuthGuard } from './core/services/AuthGuard/auth.guard';
 
@@ -9,13 +10,13 @@ import { NotFoundPageComponent } from './not-found-page/not-found-page.component
 
 const routes: Routes = [
 
-  {path: '', component:ListUserComponent,canDeactivate:[DeactivateGuardGuard]},
+  {path: '', component:ListUserComponent,canDeactivate:[DeactivateGuardGuard],canActivate:[AuthGuard]},
   {path: 'login', component:LoginComponent,canDeactivate:[DeactivateGuardGuard]},
-  {path: 'account',loadChildren:()=> import ('./module/account/account.module').then(m=>m.AccountModule)},
-  {path: 'cms', loadChildren:()=> import ('./module/cms/cms.module').then(m=>m.CmsModule)},
-  {path: 'products',loadChildren:()=> import ('./module/products/products.module').then(m=>m.ProductsModule)},
-  {path: 'users',loadChildren:()=> import ('./module/users/users.module').then(m=>m.UsersModule)},
-  {path: '**',canDeactivate:[DeactivateGuardGuard], component:NotFoundPageComponent}
+  {path: 'account',canActivate:[AuthGuard],loadChildren:()=> import ('./module/account/account.module').then(m=>m.AccountModule)},
+  {path: 'cms',canActivate:[AuthGuard], loadChildren:()=> import ('./module/cms/cms.module').then(m=>m.CmsModule)},
+  {path: 'products',canActivate:[AuthGuard],loadChildren:()=> import ('./module/products/products.module').then(m=>m.ProductsModule)},
+  {path: 'users',canActivate:[AuthGuard],loadChildren:()=> import ('./module/users/users.module').then(m=>m.UsersModule)},
+  {path: '**',canDeactivate:[DeactivateGuardGuard],canActivate:[AuthGuard], component:NotFoundPageComponent}
 ];
 
 

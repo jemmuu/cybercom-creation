@@ -14,7 +14,7 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DeactivateGuardGuard } from './core/services/CanDeactivate/deactivate-guard.guard';
 
-//import { AuthGuard } from './core/services/AuthGuard/auth.guard';
+import { AuthGuard } from './core/services/AuthGuard/auth.guard';
 
 
 @NgModule({
@@ -39,7 +39,7 @@ import { DeactivateGuardGuard } from './core/services/CanDeactivate/deactivate-g
     
   ],
 
-  providers: [UserListService,DeactivateGuardGuard],
+  providers: [UserListService,DeactivateGuardGuard,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
