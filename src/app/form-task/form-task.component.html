@@ -1,0 +1,156 @@
+<body>
+    <div class='formContainer'>
+        <form [formGroup]='_cruiseForm' (ngSubmit)='dataSwap()'>
+            <h2>Cruise Specifics </h2>
+            <hr>
+            <div class="cruiseDateContainer controlContainer">
+                <label >Date of Cruise</label><br><br>
+                            <div class='cruiseDateTime '>
+                                
+
+                                <div class='date'>
+
+                                            <input type="date"  class="form-control" formControlName='date'>
+                                            <br>
+                                            <label>date</label>
+                                            <div *ngIf="date && date.invalid && date.touched">
+                                                <div *ngIf="date.errors.required" class="alert-danger">
+                                                    Date is required.
+                                                </div>
+                                              </div>
+
+                                </div>
+                            <div class="time" formGroupName='time'>
+                                <div class="timeHour">
+
+                                                <input type="number" min=1 max=12  formControlName='hour' class="form-control hourInput"  maxlength=2 >
+                                                <br>
+                                                <label>hour</label>
+                                                <div *ngIf="timeHour && timeHour.invalid && timeHour.touched">
+                                                    <div *ngIf="timeHour.errors.required" class="alert alert-danger">
+                                                        hour is required.
+                                                    </div>
+                                                  </div>
+                                               
+                                </div>
+                                <div class="timeMinute">
+
+                                                <input type="number" min=0 max=60 formControlName='minute' class="form-control minuteInput" maxlength=2 >&nbsp;&nbsp;
+                                                <select>
+                                                    <option>AM</option>
+                                                    <option>PM</option>
+                                                </select>
+                                                <br>
+                                                <label>minute</label>
+                                                <div *ngIf="timeMinute && timeMinute.invalid && timeMinute.touched">
+                                                    <div *ngIf="timeMinute.errors.required" class="alert alert-danger">
+                                                        minute is required.
+                                                    </div>
+                                                  </div>
+                                </div>
+                                
+                            </div>
+
+                            </div>
+    </div>
+
+
+    <div class="participantContainer controlContainer">
+        <label>No. Of Participants </label><br><br>
+        <input type="Number" class="form-control" formControlName='noOfParticipant' placeholder='ex : 23' >
+        <div *ngIf="participants && participants.invalid && participants.touched">
+            <div *ngIf="participants.errors.required" class="alert alert-danger">
+              Participants are required.
+            </div>
+          </div>
+    </div>
+
+    <div class="food controlContainer">
+        <label>Food Request</label><br><br>
+        <input type="checkbox" name="breakfast" id="breakfast" value="breakfast"><label for="breakfast">breakfast</label><br>
+        <input type="checkbox" name="lunch" id="lunch" value="lunch"><label for="lunch">lunch</label><br>
+        <input type="checkbox" name="dinner" id="dinner" value="dinner"><label for="dinner">Dinner</label>
+
+
+    </div>
+
+    <div class="optionContact controlContainer" (change)='addControls()'>
+            <label>Want to add contact information?</label><br><br>
+            <input type="radio" name="contactInfo" id="yes" value='yes' class='form-control' formControlName='contactInfo'><label for="yes">Yes</label><br>
+            <input type="radio" name="contactInfo" id="no" value='no' class='form-control' formControlName='contactInfo' ><label for="no">No</label><br>
+
+    </div>
+
+    <div class="contactForm" formGroupName='contactForm'  *ngIf="this._cruiseForm.get('contactInfo').value == 'yes' ">
+        <!-- <div class="contactFormContainer"  *ngFor='let form of array.controls; let i = index ' [formGroupName]='i'> -->
+        <h2>Contact Information</h2>
+        <hr>
+       
+        <div class="fullName controlContainer" formGroupName='fullName' >
+            <label>Full name</label> <br><br>
+             <input type="text" class='form-control' formControlName='firstName' name="firstName" id="firstName"> &nbsp;&nbsp;
+             <input type="text" class='form-control' formControlName='lastName' name="lastName" id="lastname">
+             <div *ngIf="(firstName && firstName.invalid && firstName.touched) || (lastName && lastName.invalid && lastName.touched)">
+                <div *ngIf="(firstName.errors.required) || (lastName.errors.required)" class="alert alert-danger">
+                  Name is required.
+                </div>
+              </div>
+
+        </div>
+
+        <div class="email controlContainer">
+            <label for="email">Email</label> <br> <br>
+            <input type="email" name="email" id="email" class="email form-control" formControlName='email'>
+            <div *ngIf="email && email.invalid && email.touched">
+                <div *ngIf="email.errors.required " class="alert alert-danger">
+                  Email is required.
+                </div>
+                <div *ngIf="email.errors.pattern " class="alert alert-danger">
+                    enter valid email
+                  </div>
+              </div>
+        </div>
+
+        <div class="phoneNumber controlContainer">
+            <label for="phoneNumber">Phone Number</label><br> <br>
+            <input type="number" name="areaCode" id="areaCode" class="form-control" formControlName='areaCode'>&nbsp; - &nbsp;
+            <input type="tel" name="phoneNumber" id="phoneNumber" class="form-control" formControlName='phoneNumber'>
+            <div *ngIf="(phoneNumber && phoneNumber.invalid && phoneNumber.touched) || (areaCode&& areaCode.invalid && areaCode.touched)">
+                <div *ngIf="(phoneNumber.errors.required) || (areaCode.errors.required)" class="alert alert-danger">
+                  Phone Number & Area Code is required.
+                </div>
+              </div>
+        </div>
+        <div formArrayName='additionalRequests'>
+        <div class="extraReq controlContainer" *ngFor='let nam of additionalRequests.controls;let i=index ' [formGroupName]='i'>
+            <label for="extraReq">Additional Requests</label><br><br>
+            <textarea rows='5' cols='40' class="form-control" id="extraReq" formControlName='test'  name="extraReq"></textarea>
+            <div class='alert-danger'*ngIf="(additionalRequests && additionalRequests.invalid && additionalRequests.touched)">
+                
+                <!-- {{additionalRequests.at(i).test.errors| json}}
+                <div *ngIf="this._cruiseForm.get('contactForm.additionalRequests').at(i).test.errors?.required" class="alert alert-danger"> -->
+                  Phone Number & Area Code is required.
+                <!-- </div> -->
+              </div>
+        </div></div>
+
+
+
+
+
+    <!-- </div> -->
+    </div>
+   
+    <input type="submit" value="submit" [disabled]="this._cruiseForm.invalid "  >
+    
+    <button routerLink=''>nav</button>
+
+
+
+
+        </form>
+
+
+    </div>
+  
+</body>

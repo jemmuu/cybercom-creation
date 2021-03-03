@@ -15,6 +15,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DeactivateGuardGuard } from './core/services/CanDeactivate/deactivate-guard.guard';
 
 import { AuthGuard } from './core/services/AuthGuard/auth.guard';
+import { FormTaskComponent } from './form-task/form-task.component';
+import { RegFormDataService } from './core/services/regFormData/reg-form-data.service';
+import { TestServiceService } from './core/services/testService/test-service.service';
+import { Comp1Component } from './comp1/comp1.component';
+import { Comp2Component } from './comp2/comp2.component';
+import { ServiceTestService } from './core/services/testService/service-test.service';
 
 
 @NgModule({
@@ -22,7 +28,11 @@ import { AuthGuard } from './core/services/AuthGuard/auth.guard';
     AppComponent,
     ListUserComponent,
     NotFoundPageComponent,
-    LoginComponent
+    LoginComponent,
+    FormTaskComponent,
+    Comp1Component,
+    Comp2Component,
+    
    
     
   ],
@@ -38,8 +48,8 @@ import { AuthGuard } from './core/services/AuthGuard/auth.guard';
     FormsModule
     
   ],
-
-  providers: [UserListService,DeactivateGuardGuard,AuthGuard],
+  
+  providers: [RegFormDataService,ServiceTestService,TestServiceService,UserListService,DeactivateGuardGuard,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

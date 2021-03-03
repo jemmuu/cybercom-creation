@@ -1,0 +1,64 @@
+.cruiseDateTime
+{
+    display: flex;
+    flex-direction: row;
+}
+
+.date.timeHour.timeMiute
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+   
+}
+
+.formContainer
+{
+    width: 60%;
+    height: 80%;
+    margin: auto;
+    padding: 1rem;
+    box-shadow: 0 4px 8px 0;
+    
+}
+
+.controlContainer
+{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.cruiseDateContainer
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hourInput
+{
+    width: 100%;
+}
+
+.minuteInput
+{
+    width: 20%;
+}
+
+.time 
+{
+    display: flex;
+    flex-direction: row;
+}
+
+.timeHour 
+{
+    width: min-content;
+    margin: 0 10px;
+}
+
+.alert-danger
+{
+    color: red;
+    background-color: lightcoral;
+}

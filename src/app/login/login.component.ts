@@ -13,6 +13,7 @@ import { LoginServiceService } from '../core/services/loginService/login-service
 })
 export class LoginComponent implements OnInit,DeactivateGuard{
   frm;
+  //function for canDeactivate
   Deactivate()
   {
     if(confirm('are u sure?'))
@@ -25,6 +26,7 @@ export class LoginComponent implements OnInit,DeactivateGuard{
     }
   }
  
+  //form validation 
   constructor(fb: FormBuilder, private services : LoginServiceService,private _router : Router) { 
 
     this.frm = fb.group({
@@ -38,6 +40,7 @@ export class LoginComponent implements OnInit,DeactivateGuard{
 
     });
 
+    //checking if user already log in
     if (localStorage.getItem('currentUser') !== null) {  
       this._router.navigate(['']);  
     }  
@@ -56,6 +59,8 @@ export class LoginComponent implements OnInit,DeactivateGuard{
  {
   return this.frm.get('password');
  }
+
+ //check creditials if token receive in responce than store login in local storage 
   login()
   {
 

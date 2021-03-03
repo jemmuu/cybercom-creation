@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 
 import { UserListService } from 'src/app/core/services/userList/user-list.service';
 import { DeactivateGuard } from '../core/services/CanDeactivate/deactivate-guard.guard';
+import { RegFormDataService } from '../core/services/regFormData/reg-form-data.service';
+import { TestServiceService } from '../core/services/testService/test-service.service';
 
 
 
@@ -15,8 +17,11 @@ import { DeactivateGuard } from '../core/services/CanDeactivate/deactivate-guard
 export class ListUserComponent implements OnInit,DeactivateGuard{
 
   _data : any = [];
+ // _test:any[]=[];
+  _dataF : any;
+  _formData : any;
  
-  constructor(private service : UserListService, private _router : Router) { }
+  constructor(private service : UserListService,private testService : TestServiceService, private data : RegFormDataService,private _router : Router) { }
 
 
   Deactivate()
@@ -34,6 +39,7 @@ export class ListUserComponent implements OnInit,DeactivateGuard{
   ngOnInit(): void {
 
     this.getUser();
+    this.data._latestData$.subscribe(latestData =>{console.log(latestData + ' in subcrib list user success'), this._formData = latestData});
   }
 
   nav(link : HTMLInputElement)
@@ -46,6 +52,16 @@ export class ListUserComponent implements OnInit,DeactivateGuard{
   {
     this.service.getUsers()
     .subscribe(dataa  => {this._data = dataa.data,console.log(this._data)})
+  }
+
+
+  
+  
+  print()
+  {
+    
+    
+    console.log(this._formData);
   }
 
 }
