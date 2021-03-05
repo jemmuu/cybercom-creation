@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            AES (Encryption-Decryption)
+        </div>
+        <div class="card-body">
+            
+           
+            Encryption :  <input class="input form-control" id='input' type="text" placeholder="Enter Data For Encryption" [(ngModel)]="_request"><br>   
+           
+            <input type="button" class="btn btn-primary" value="Encrypt" (click)="encrypt()">&nbsp;&nbsp; 
+            <input type="button" class="btn btn-danger" value="Decrypt" (click)="decrypt()"><br>
+            <hr> 
+            <h3>{{ _encrypted }} </h3>
+            <h3>{{_descrypted}}</h3>
+             <button class='btn btn-info' *ngIf='_valid' (click)="copyMessage()" value="click to copy" >Copy</button>
+        </div>
+    </div>
+</div>

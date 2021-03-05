@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Form, FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, Validators, FormArray } from '@angular/forms';
+
 import { RegFormDataService } from '../core/services/regFormData/reg-form-data.service';
-import { TestServiceService } from '../core/services/testService/test-service.service';
 
 @Component({
   selector: 'app-form-task',
@@ -37,7 +37,7 @@ export class FormTaskComponent implements OnInit {
         email:[''],
         phoneNumber:[''],
         areaCode : [''],
-        additionalRequests:this._fb.array([this.test()])
+        
       }),
 
       
@@ -49,13 +49,7 @@ export class FormTaskComponent implements OnInit {
     console.log(this._cruiseForm.value);
   }
 
-  test(): FormGroup
-  {
-    return this._fb.group({
-
-      test : ['',Validators.required]
-    })
-  }
+ 
   addControls() 
   // : FormGroup
   {
@@ -75,8 +69,7 @@ export class FormTaskComponent implements OnInit {
 
     console.log(this._cruiseForm.get('contactInfo').value);
     if(this._cruiseForm.get('contactInfo').value=='yes'){
-      this.test();
-      console.log(this._cruiseForm.value);
+     
 
       this.firstName.setValidators([Validators.required]);
       this.firstName.updateValueAndValidity();
@@ -92,7 +85,10 @@ export class FormTaskComponent implements OnInit {
 
       this.phoneNumber.setValidators([Validators.required]);
       this.phoneNumber.updateValueAndValidity();
-    }else{
+    }
+    
+    else{
+      console.log('in else');
       this.firstName.clearValidators();
       this.firstName.updateValueAndValidity();
 
@@ -138,7 +134,7 @@ export class FormTaskComponent implements OnInit {
   get lastName(){return this._cruiseForm.get('contactForm.fullName.lastName');}
   get email(){return this._cruiseForm.get('contactForm.email');}
   get phoneNumber(){return this._cruiseForm.get('contactForm.phoneNumber');}
-  get additionalRequests(){return (<FormArray>this._cruiseForm.get('contactForm.additionalRequests'));}
+  
   get areaCode()
   { return this._cruiseForm.get('contactForm.areaCode') }
 

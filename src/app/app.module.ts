@@ -17,10 +17,8 @@ import { DeactivateGuardGuard } from './core/services/CanDeactivate/deactivate-g
 import { AuthGuard } from './core/services/AuthGuard/auth.guard';
 import { FormTaskComponent } from './form-task/form-task.component';
 import { RegFormDataService } from './core/services/regFormData/reg-form-data.service';
-import { TestServiceService } from './core/services/testService/test-service.service';
-import { Comp1Component } from './comp1/comp1.component';
-import { Comp2Component } from './comp2/comp2.component';
-import { ServiceTestService } from './core/services/testService/service-test.service';
+import { CryptoJsComponent } from './crypto-js/crypto-js.component';
+
 
 
 @NgModule({
@@ -30,8 +28,9 @@ import { ServiceTestService } from './core/services/testService/service-test.ser
     NotFoundPageComponent,
     LoginComponent,
     FormTaskComponent,
-    Comp1Component,
-    Comp2Component,
+    CryptoJsComponent
+    
+    
     
    
     
@@ -49,7 +48,7 @@ import { ServiceTestService } from './core/services/testService/service-test.ser
     
   ],
   
-  providers: [RegFormDataService,ServiceTestService,TestServiceService,UserListService,DeactivateGuardGuard,AuthGuard],
+  providers: [RegFormDataService,UserListService,DeactivateGuardGuard,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

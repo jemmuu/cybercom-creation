@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { UserListService } from 'src/app/core/services/userList/user-list.service';
 import { DeactivateGuard } from '../core/services/CanDeactivate/deactivate-guard.guard';
 import { RegFormDataService } from '../core/services/regFormData/reg-form-data.service';
-import { TestServiceService } from '../core/services/testService/test-service.service';
+
 
 
 
@@ -17,11 +17,11 @@ import { TestServiceService } from '../core/services/testService/test-service.se
 export class ListUserComponent implements OnInit,DeactivateGuard{
 
   _data : any = [];
- // _test:any[]=[];
-  _dataF : any;
+
+  
   _formData : any;
  
-  constructor(private service : UserListService,private testService : TestServiceService, private data : RegFormDataService,private _router : Router) { }
+  constructor(private service : UserListService, private data : RegFormDataService,private _router : Router) { }
 
 
   Deactivate()
