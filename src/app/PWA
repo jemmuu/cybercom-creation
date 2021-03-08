@@ -1,0 +1,111 @@
+             
+             steps
+             
+                step 1: add pwa to project
+                nng add @angular/pwa
+
+
+                step 2 ; set swupdate for chages
+                constructor(updates : SwUpdate)
+                {
+                    updates.available.subcribe(ev =>
+                    
+                    updates.activateUpdate().then(()=> document.location.reload());
+                    
+                    )
+                }
+
+
+                step 3: add api endpoint caching in ngsw-config (same level as assets)
+
+                "dataGroups" : [
+
+                    {
+                    "name" : "name",
+                    "urls" : ["api1"],
+                    "cacheConfig" : {
+                            "strategy" : "freshness",
+                            "maxSize" : 20,
+                            "maxAge" : "1h",
+                            "timeout" : "4s"
+
+                    }
+
+                    }] 
+
+About pwa
+
+ 1) what it is?
+ -->Progressive Web Apps are web apps that use emerging web browser APIs and features along with traditional 
+    progressive enhancement strategy to bring a native app-like user experience to cross-platform web applications.
+    Progressive Web Apps are a useful design pattern, though they aren't a formalized standard. PWA can be thought 
+    of as similar to AJAX or other similar patterns that encompass a set of application attributes, including use
+    of specific web technologies and techniques.
+
+
+2)PWA's main features
+--> Secure contexts (HTTPS), one or more Service Workers, and a manifest file.
+
+            ->Secure contexts (HTTPS)
+                        The web application must be served over a secure network. Being a secure site is not only a
+                         best practice, but it also establishes your web application as a trusted site especially 
+                         if users need to make secure transactions. Most of the features related to a PWA such as 
+                         geolocation and even service workers are available only once the app has been loaded using 
+                         HTTPS.
+            ->Service workers
+                        A service worker is a script that allows intercepting and control of how a web browser 
+                        handles its network requests and asset caching. With service workers, web developers can 
+                        create reliably fast web pages and offline experiences.
+            ->Manifest file
+                        A JSON file that controls how your app appears to the user and ensures that progressive web 
+                        apps are discoverable. It describes the name of the app, the start URL, icons, and all of the 
+                        other details necessary to transform the website into an app-like format.
+
+3)PWA work for all language ?
+--> yes it is!! we can use any backend language to code our application but it must give response in front-end with
+    html/css/javascript. we can say it uses js is must in fron-end. we can build PWA with vanilla js too. Most famouse 
+    frameWork for PWA is Angular,React,Vue, Iconic and Polymer etc. all based on js with that all there is new dev
+    tools like scandipwa  which help magento clients to make any website PWA and many more tools like that available.
+
+4)Why Do We Need a Progressive Web App?
+-->PWAs help to solve problems like internet speed, slow website load, and user engagement. To overcome these
+ problems, there are reasons for using a progressive web app, but these are some of the top capabilities as it
+  provides the following:
+
+       -> Fast: 
+                PWAs provide consistently fast experience for users. From the moment user downloads the app to the 
+                moment they start interacting with it, everything happens extremely fast. It is also fast to start 
+                the app again without hitting the network.
+       -> Reliable Experience:
+                 With the help of service workers, one can paint a picture on the user’s screen even when the network 
+                 has failed.
+       -> Integrated User Experience: 
+                 With PWAs, the experience is integrated and seamless. This is due to the fact that they sit in the
+                 user’s home screen, send push notifications and have access to the device’s functionalities like
+                 native apps.
+        -> Engaging: 
+                Since we can send notifications to the user, then we can really drive the engagement up by
+                keeping user notified and engaged with the app.
+
+5)advantages of PWA
+-->1. Safe & Secure:
+                    Without sacrificing performance or security, PWAs provide familiar app experience as what users
+                    demand. One of the biggest topics for internet is safety, particularly when it comes to content
+                    being stolen, shared or hacked. PWAs are able to combat this problem. As they are offered via 
+                    HTTPs that provides major benefits for both users and developers.
+    2. Easy Updates:
+                    The app updates are most required when it comes to internet use. For improvements, the new
+                    features are developed by removing bugs and glitches. PWAs have added the benefits of pushing
+                    updates by the developers themselves and not the users. The new updates and features can be 
+                    added remotely by the development team. Users will notice new and improved features but do not
+                    have to approve updates themselves.
+    3. Access Anywhere:
+                    Apps come with drawbacks like they need to be regularly upgraded, might be too large to install,
+                    or might not be compatible with certain devices. There are a number of factors, which make them 
+                    difficult to install and use. This is where the benefits of PWAs come. This is because the app 
+                    is offered in the form of an interactive website, and available to particularly everyone with 
+                    internet access and a browser.
+                    It does not be downloaded and is instantly compatible. There is no fear of the user not having
+                    enough storage space. The programs with functionality settings need to be upgraded from time
+                    to time. However, PWAs have added the benefit of not needing to be upgraded by the user.
+                    If the newer version comes out, they have instant access to it by merely visiting the website.

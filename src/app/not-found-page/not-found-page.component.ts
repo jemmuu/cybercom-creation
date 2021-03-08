@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DeactivateGuard } from '../core/services/CanDeactivate/deactivate-guard.guard';
 import { RegFormDataService } from '../core/services/regFormData/reg-form-data.service';
+import { UserListService } from '../core/services/userList/user-list.service';
 
 @Component({
   selector: 'app-not-found-page',
@@ -10,8 +11,8 @@ import { RegFormDataService } from '../core/services/regFormData/reg-form-data.s
 })
 export class NotFoundPageComponent implements OnInit,DeactivateGuard {
   _formData: any;
-  dataF :Object = {};
-  constructor(private _router : Router,private data : RegFormDataService) { 
+  _data :any = [];
+  constructor(private _router : Router,private data : RegFormDataService, private apiCall : UserListService) { 
   }
   Deactivate()
   {
@@ -25,6 +26,11 @@ export class NotFoundPageComponent implements OnInit,DeactivateGuard {
     }
   }
 
+  getUser()
+  {
+    this.apiCall.getUsers()
+    .subscribe(dataa  => {this._data = dataa.data,console.log(this._data)})
+  }
 
     nav(link : HTMLInputElement)
   {
@@ -32,9 +38,7 @@ export class NotFoundPageComponent implements OnInit,DeactivateGuard {
   }
 
   ngOnInit(): void {
-    this.data._latestData$.subscribe(latestData =>{console.log(latestData + 'in subcrib'), this._formData = latestData});
-
-    console.log(this._formData);
+    this.getUser();
   }
 
   

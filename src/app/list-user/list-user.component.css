@@ -16,13 +16,15 @@
     margin-top: 2rem;
     margin-left: 1.5rem;
     border-radius: 10%;
+    width: auto;
+    
 }
 
 .card
 {
     
     padding: 4px;
-    min-width: 250px;
+    width: 300px;
     text-align: center;
     border-radius: 10%;
     

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SwUpdate } from '@angular/service-worker';
 
 
 @Component({
@@ -8,5 +9,18 @@ import { Component } from '@angular/core';
 })
 export class AppComponent  {
   title = 'angular-final';
+  update : boolean = false;
+  constructor(updates : SwUpdate)
+{
+
+    updates.available.subscribe(ev =>
+    
+    // updates.activateUpdate().then(()=> document.location.reload()),
+    this.update = true
+    
+    )
+    
+    
+}
   
 }
