@@ -20,6 +20,10 @@ import { RegFormDataService } from './core/services/regFormData/reg-form-data.se
 import { CryptoJsComponent } from './crypto-js/crypto-js.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { FireStoreCrudComponent } from './fire-store-crud/fire-store-crud.component';
+import { AngularFireModule } from '@angular/fire';
+import{AngularFireDatabaseModule} from '@angular/fire/database';
+import {AngularFirestoreModule} from '@angular/fire/firestore'
 
 
 
@@ -30,7 +34,10 @@ import { environment } from '../environments/environment';
     NotFoundPageComponent,
     LoginComponent,
     FormTaskComponent,
-    CryptoJsComponent
+    CryptoJsComponent,
+     FireStoreCrudComponent
+  
+    
     
     
     
@@ -47,7 +54,10 @@ import { environment } from '../environments/environment';
     UsersModule,
     ReactiveFormsModule,
     FormsModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireDatabaseModule,
+    AngularFirestoreModule
     
   ],
   

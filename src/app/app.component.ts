@@ -13,10 +13,12 @@ export class AppComponent  {
   constructor(updates : SwUpdate)
 {
 
-    updates.available.subscribe(ev =>
+  //in pwa we have to refresh few times to get updated data foolowing fun for refreshing page if 
+  //code is updated  
+  updates.available.subscribe(ev =>
     
-    // updates.activateUpdate().then(()=> document.location.reload()),
-    this.update = true
+    updates.activateUpdate().then(()=> document.location.reload()),
+    //this.update = true
     
     )
     

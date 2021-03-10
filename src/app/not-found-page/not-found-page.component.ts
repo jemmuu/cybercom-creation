@@ -28,15 +28,19 @@ export class NotFoundPageComponent implements OnInit,DeactivateGuard {
 
   getUser()
   {
+    // purpose of checking pwa
     this.apiCall.getUsers()
     .subscribe(dataa  => {this._data = dataa.data,console.log(this._data)})
   }
 
+
+  // to navigate beetween components
     nav(link : HTMLInputElement)
   {
     this._router.navigate([`${link.value}`]);
   }
 
+  // to load data 
   ngOnInit(): void {
     this.getUser();
   }

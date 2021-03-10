@@ -18,7 +18,10 @@ export class FormTaskComponent implements OnInit {
 
   ngOnInit(): void {
     
+   // getting data from behaviour subject in  service
     this.data._latestData$.subscribe(latestData =>{console.log(latestData + ' in subcrib form task success'), this._formDataa = latestData});
+    
+    /form validators/
     this._cruiseForm = this._fb.group({
 
       date : ['',Validators.required],
@@ -66,6 +69,10 @@ export class FormTaskComponent implements OnInit {
 
     // console.log(this._cruiseForm.value);
     // return this.fb.group({});
+
+
+
+    //update validators with radio button choice
 
     console.log(this._cruiseForm.get('contactInfo').value);
     if(this._cruiseForm.get('contactInfo').value=='yes'){

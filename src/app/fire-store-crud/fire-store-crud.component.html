@@ -1,0 +1,49 @@
+<h1 class="justify-content-center">Employe Management</h1>
+<div class="form-group p-2">
+    <input type="text" class="form-control" name="empname" id="empname" placeholder="Emplyee name" [(ngModel)]='_employeeName'>
+</div>
+<div class="form-group p-2">
+    <input type="text" class="form-control" name="emppos" id="emppos" placeholder="Emplyee Position" [(ngModel)]='_employeePosition'>
+</div>
+<div class="form-group p-2">
+    <input type="button" class="btn btn-primary btn-lg" value="Add Employee" (click)='addEmployee()' [disabled]='_employeeName == "" && _employeePosition == ""'>
+</div>
+<div class="row p-3">
+    <div class="d-flex justify-content-center"><h2>All Employee</h2></div>
+<div class="col-md-3 p-2" *ngFor='let data of _employee'>
+    <div class="card" *ngIf='!data.isEdit, else elseBlock'>
+        <div class="card-body">
+            <div class="card-title">Name : {{data.name}}</div>
+            <div class="card-subtitle">Position : {{data.position}}</div>
+            <div class="card-text p-2"><button class="btn btn-primary btn-sm" (click)='updateMode(data)'>Update</button>
+                &nbsp;&nbsp;
+                <button class="btn btn-danger btn-sm" (click)='delete(data.id)'>Delete</button>
+            
+            </div>
+        </div>
+    </div>
+    <ng-template #elseBlock>
+
+
+        <div class="card" >
+            <div class="card-body">
+                <div class="card-title"> Edit Employee</div>
+                <div class="form-group p-2">
+                    <input type="text" class="form-control" name="empname" id="empname" placeholder="Emplyee name" [(ngModel)]='data.editName'>
+                </div>
+                <div class="form-group p-2">
+                    <input type="text" class="form-control" name="emppos" id="emppos" placeholder="Emplyee Position" [(ngModel)]='data.editPosition'>
+                </div>
+                
+                <div class="card-text p-2"><button class="btn btn-primary btn-sm" (click)='updateData(data)'>Update</button>
+                    &nbsp;&nbsp;
+                    <button class="btn btn-danger btn-sm" (click)='cancleEdit(data)'>Delete</button>
+                
+                </div>
+            </div>
+        </div>
+    
+    </ng-template>
+</div>
+</div>
+

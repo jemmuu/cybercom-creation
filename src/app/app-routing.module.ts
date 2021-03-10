@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './core/services/AuthGuard/auth.guard';
 import { DeactivateGuardGuard } from './core/services/CanDeactivate/deactivate-guard.guard';
 import { CryptoJsComponent } from './crypto-js/crypto-js.component';
+import { FireStoreCrudComponent } from './fire-store-crud/fire-store-crud.component';
 import { FormTaskComponent } from './form-task/form-task.component';
 //import { AuthGuard } from './core/services/AuthGuard/auth.guard';
 
@@ -13,8 +14,10 @@ import { NotFoundPageComponent } from './not-found-page/not-found-page.component
 
 const routes: Routes = [
 
-  {path: '', component:ListUserComponent,canDeactivate:[DeactivateGuardGuard],canActivate:[AuthGuard]},
+  {path: 'firecrud', component:ListUserComponent,canDeactivate:[DeactivateGuardGuard],canActivate:[AuthGuard]},
   {path: 'crypto', component:CryptoJsComponent,canDeactivate:[DeactivateGuardGuard],canActivate:[AuthGuard]},
+  {path: '', component:FireStoreCrudComponent,canDeactivate:[DeactivateGuardGuard],canActivate:[AuthGuard]},
+
   
   {path: 'login', component:LoginComponent,canDeactivate:[DeactivateGuardGuard]},
   {path:'formTask',component:FormTaskComponent},

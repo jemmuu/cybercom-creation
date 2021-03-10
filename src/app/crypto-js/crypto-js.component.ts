@@ -21,7 +21,7 @@ export class CryptoJsComponent implements OnInit {
  
  
 
- 
+ //if input field is not empty than it encrypt via crypto-Js module
   encrypt()
   {
     if(this._request == '')
@@ -36,6 +36,7 @@ export class CryptoJsComponent implements OnInit {
     this._request= '';
   }
 
+   //if input field is not encrypted string than it decrypt via crypto-Js module
   decrypt()
   {
     if(this._request.indexOf('U2FsdGVkX1')!= -1)
@@ -49,6 +50,8 @@ export class CryptoJsComponent implements OnInit {
     this._request= '';
   }
 
+
+  ///copy buttton function
   copyMessage()
   {
     if(this._descrypted!= '')

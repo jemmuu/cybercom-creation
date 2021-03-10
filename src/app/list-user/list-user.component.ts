@@ -23,7 +23,7 @@ export class ListUserComponent implements OnInit,DeactivateGuard{
  
   constructor(private service : UserListService, private data : RegFormDataService,private _router : Router) { }
 
-
+//fun for deactivate routeguard 
   Deactivate()
   {
     if(confirm('are u sure?'))
@@ -42,12 +42,13 @@ export class ListUserComponent implements OnInit,DeactivateGuard{
     this.data._latestData$.subscribe(latestData =>{console.log(latestData + ' in subcrib list user success'), this._formData = latestData});
   }
 
+  //for navigation in diff component
   nav(link : HTMLInputElement)
   {
     this._router.navigate([`${link.value}`]);
   }
 
-
+  // get all data from api
   getUser()
   {
     this.service.getUsers()
@@ -56,7 +57,7 @@ export class ListUserComponent implements OnInit,DeactivateGuard{
 
 
   
-  
+  // check if data is store in variable or not (testng purpose only)
   print()
   {
     
