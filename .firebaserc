@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "employee-crud-e0939"
+  },
+  "targets": {
+    "employee-crud-e0939": {
+      "hosting": {
+        "angular-final": [
+          "employee-crud-e0939"
+        ]
+      }
+    }
   }
 }

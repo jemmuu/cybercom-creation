@@ -1,6 +1,20 @@
 <h1 class="justify-content-center">Employe Management</h1>
+<div class="form-group" (change)='db()'>
+<div class="form-check" >
+    <input class="form-check-input" type="radio" [(ngModel)] ='_db' name="flexRadioDefault" id="flexRadioDefault1" value="real">
+    <label class="form-check-label" for="flexRadioDefault1">
+      Realtime database  
+        </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" [(ngModel)] ='_db'  type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="fire" checked>
+    <label class="form-check-label"    for="flexRadioDefault2">
+      cloud firestore 
+    </label>
+  </div>
+</div>
 <div class="form-group p-2">
-    <input type="text" class="form-control" name="empname" id="empname" placeholder="Emplyee name" [(ngModel)]='_employeeName'>
+    <input type="text" class="form-control" #fire name="empname" id="empname" placeholder="Emplyee name" [(ngModel)]='_employeeName'>
 </div>
 <div class="form-group p-2">
     <input type="text" class="form-control" name="emppos" id="emppos" placeholder="Emplyee Position" [(ngModel)]='_employeePosition'>

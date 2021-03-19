@@ -14,9 +14,9 @@ import { NotFoundPageComponent } from './not-found-page/not-found-page.component
 
 const routes: Routes = [
 
-  {path: 'firecrud', component:ListUserComponent,canDeactivate:[DeactivateGuardGuard],canActivate:[AuthGuard]},
+  {path: '', component:ListUserComponent,canDeactivate:[DeactivateGuardGuard],canActivate:[AuthGuard]},
   {path: 'crypto', component:CryptoJsComponent,canDeactivate:[DeactivateGuardGuard],canActivate:[AuthGuard]},
-  {path: '', component:FireStoreCrudComponent,canDeactivate:[DeactivateGuardGuard],canActivate:[AuthGuard]},
+  {path: 'firecrud', component:FireStoreCrudComponent,canDeactivate:[DeactivateGuardGuard],canActivate:[AuthGuard]},
 
   
   {path: 'login', component:LoginComponent,canDeactivate:[DeactivateGuardGuard]},

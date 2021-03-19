@@ -22,8 +22,15 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { FireStoreCrudComponent } from './fire-store-crud/fire-store-crud.component';
 import { AngularFireModule } from '@angular/fire';
-import{AngularFireDatabaseModule} from '@angular/fire/database';
-import {AngularFirestoreModule} from '@angular/fire/firestore'
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireMessagingModule } from '@angular/fire/messaging';
+import { MesseagingService } from './core/services/messeaging/messeaging.service';
+
+
+
+
 
 
 
@@ -57,11 +64,15 @@ import {AngularFirestoreModule} from '@angular/fire/firestore'
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    AngularFireAuthModule,
+    AngularFireMessagingModule
+    
+    
     
   ],
   
-  providers: [RegFormDataService,UserListService,DeactivateGuardGuard,AuthGuard],
+  providers: [RegFormDataService,UserListService,DeactivateGuardGuard,AuthGuard,MesseagingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

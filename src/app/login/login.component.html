@@ -30,6 +30,7 @@
      <br>
      <br>
     <input class="submit" type="submit"[disabled]='!this.frm.valid' value="LOG IN">
-   
+    <input class="btn btn-info" type="button"[disabled]='!this.frm.valid' value="register" (click)='services.registration(username!.value,password!.value)'>
+    <input class="button" type="button" value="LOG IN VIA GOOGLE" (click)='loginViaGoogle()'>
   </div>
   </form>

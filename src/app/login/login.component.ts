@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { EMPTY } from 'rxjs';
+import { take, catchError } from 'rxjs/operators';
 import { DeactivateGuard } from '../core/services/CanDeactivate/deactivate-guard.guard';
 
 import { LoginServiceService } from '../core/services/loginService/login-service.service';
@@ -27,7 +29,7 @@ export class LoginComponent implements OnInit,DeactivateGuard{
   }
  
   //form validation 
-  constructor(fb: FormBuilder, private services : LoginServiceService,private _router : Router) { 
+  constructor(fb: FormBuilder, public services : LoginServiceService,private _router : Router) { 
 
     this.frm = fb.group({
 
@@ -66,28 +68,55 @@ export class LoginComponent implements OnInit,DeactivateGuard{
 
     let data = { "email" : this.username?.value, "password" : this.password?.value};
 
-    this.services.login(data)
-    .subscribe(res => {
+    this.services.login(data);
 
-      if(res.token)
-      {
-        console.log(res.token);
-        localStorage.setItem('currentUser', "loggedin");
-        this._router.navigate(['']);
+    // this.services.login(data)
+    // .subscribe(res => {
+
+    //   if(res.token)
+    //   {
+    //     console.log(res.token);
+    //     localStorage.setItem('currentUser', "loggedin");
+    //     this._router.navigate(['']);
         
-      }
+    //   }
          
       
-    },
-    (error: Response) => {
-      if (error.status == 400) {
-        console.log(error);
-        alert('wrong password or username');
-      }
-      else throw error;
-    })
+    // },
+    // (error: Response) => {
+    //   if (error.status == 400) {
+    //     console.log(error);
+    //     alert('wrong password or username');
+    //   }
+    //   else throw error;
+    // })
        
-    
+     
   }
+
+
+
+  loginViaGoogle()
+  {
+   
+      this.services
+        .loginViaGoogle()
+        .pipe(
+          take(1),
+          catchError((error) => {
+            alert('error' + error)
+            return EMPTY;
+          }),
+        )
+        .subscribe(
+          (response) =>{
+            response &&
+            alert('success');
+            localStorage.setItem('currentUser', "loggedin");
+            this._router.navigate(['']);
+           } );
+    }
+  
+
 
 }
