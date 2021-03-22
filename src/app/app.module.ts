@@ -27,6 +27,8 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireMessagingModule } from '@angular/fire/messaging';
 import { MesseagingService } from './core/services/messeaging/messeaging.service';
+import { UserModuleModule } from './user-module/user-module.module';
+import { AccountModuleModule } from './account-module/account-module.module';
 
 
 
@@ -66,7 +68,10 @@ import { MesseagingService } from './core/services/messeaging/messeaging.service
     AngularFireDatabaseModule,
     AngularFirestoreModule,
     AngularFireAuthModule,
-    AngularFireMessagingModule
+    AngularFireMessagingModule,
+    UserModuleModule,
+    AccountModuleModule
+    
     
     
     

@@ -21,6 +21,8 @@ const routes: Routes = [
   
   {path: 'login', component:LoginComponent,canDeactivate:[DeactivateGuardGuard]},
   {path:'formTask',component:FormTaskComponent},
+  {path:'accountModule', loadChildren:()=> import ('./account-module/account-module.module').then(m=>m.AccountModuleModule)},
+  {path:'userModule', loadChildren:()=> import ('./user-module/user-module.module').then(m=>m.UserModuleModule)},
   {path: 'account',canActivate:[AuthGuard],loadChildren:()=> import ('./module/account/account.module').then(m=>m.AccountModule)},
   {path: 'cms',canActivate:[AuthGuard], loadChildren:()=> import ('./module/cms/cms.module').then(m=>m.CmsModule)},
   {path: 'products',canActivate:[AuthGuard],loadChildren:()=> import ('./module/products/products.module').then(m=>m.ProductsModule)},
