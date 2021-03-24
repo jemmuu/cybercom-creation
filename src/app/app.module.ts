@@ -54,7 +54,7 @@ import { AccountModuleModule } from './account-module/account-module.module';
     
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     HttpClientModule,
     AccountModule,
