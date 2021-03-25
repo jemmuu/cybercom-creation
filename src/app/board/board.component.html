@@ -13,14 +13,23 @@
 </h2>
 
 <main>
-    <app-square
+    <!-- <app-square
         *ngFor='let val of squares; let i = index'
         [value]='val'  
         (click)='makeMOVE(i)'
-    >
+    > -->
+    <div class="btn" *ngFor='let value of squares; let i = index'
+         
+    (click)='makeMOVE(i)'>
+    <button mat-stroked-button  *ngIf='!value' >{{value}}</button>
+    <button mat-flat-button color="primary" *ngIf='value =="X"' >{{value}}</button>
+    <button mat-flat-button color="accent" *ngIf='value=="O"' >{{value}}</button>
 
-    </app-square>
+    </div>
+
+    <!-- </app-square> -->
 </main>
 <br>
+
 
 </div>

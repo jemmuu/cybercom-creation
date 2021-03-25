@@ -17,6 +17,9 @@ export class BoardComponent implements OnInit {
   ngOnInit(): void {
     this.newGame();
   }
+
+
+  // reset the game by changing value of array which is based of for loop
 newGame()
 {
     this.squares = Array(9).fill(null);
@@ -24,11 +27,14 @@ newGame()
     this.xIsNext= true;
 }
 
+
+
 get player()
 {
   return this.xIsNext ? 'X' : 'O';
 }
 
+// function when everytime clicked change player and put respective value button 
 
 makeMOVE(idx : number)
 {
@@ -45,6 +51,8 @@ makeMOVE(idx : number)
   
 }
 
+
+// brain function for deciding winner
 calculateWinner()
 {
   const lines = [
