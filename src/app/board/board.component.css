@@ -1,0 +1,39 @@
+main{
+    display: grid;
+    grid-template-columns: 150px 150px 150px;
+    grid-gap: 0px;
+}
+
+app-square
+{
+    border:1px gray solid;
+    height : 150px;
+    text-align: center;
+    background-color: #1f4068;
+
+}
+
+*
+{
+    justify-content: center;
+    text-align: center;
+    background-color: #162447;
+    color: #bbe1fa;
+   
+
+}
+
+h1
+{
+    padding-top: 2%;
+}
+
+h2
+{
+    color: #ccffbd;
+}
+
+.container
+{
+    height: 100%;
+}
